@@ -1,6 +1,6 @@
 package com.example.backend.configuration;
 
-import com.example.backend.modelsDossier.photo;
+import com.example.backend.modelsDossier.*;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -44,7 +44,7 @@ public class DosierDataSourceConfiguration {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(dossierDataSource())
-                .packages(photo.class)
+                .packages(esf_all2.class)
                 .build();
     }
 
