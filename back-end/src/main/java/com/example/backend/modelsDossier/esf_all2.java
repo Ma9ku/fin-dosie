@@ -9,9 +9,8 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 import java.sql.Date;
 
-
 @Entity
-@Table(name = "esf_all2")
+@Table(name = "esf_all2", schema = "esf")
 public class esf_all2 {
     @Id
     private String INVOICE_ID;
