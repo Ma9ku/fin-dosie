@@ -9,11 +9,11 @@ import java.sql.Date;
 @Table(name = "mv_auto_fl", schema = "ser")
 
 public class mv_auto_fl {
-    @Id
 
     private String iin;
     private String brand_model;
     private String date_certificate;
+
     private String series_reg_number;
     private String reg_number;
     private String category_control_tc;
@@ -23,6 +23,8 @@ public class mv_auto_fl {
     private String weight;
     private String max_weight;
     private String owner_category;
+    @Id
+
     private String end_date;
     private String color;
     private String release_year_tc;

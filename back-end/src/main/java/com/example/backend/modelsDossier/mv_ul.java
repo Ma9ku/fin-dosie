@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "mv_ul", schema = "ser")
 public class mv_ul {
-    @Id
     private String bin;
     private String full_name_rus;
     private String full_name_kaz;
@@ -23,6 +22,8 @@ public class mv_ul {
     private String registration_number;
     private String oked;
     private String head_organization;
+    @Id
+
     private String subject_id;
     private String layer_id;
     private String ul_status;

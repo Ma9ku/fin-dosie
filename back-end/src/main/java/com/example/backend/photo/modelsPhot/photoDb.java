@@ -1,4 +1,4 @@
-package com.example.backend.modelsPhoto;
+package com.example.backend.photo.modelsPhot;
 
 import org.hibernate.annotations.Type;
 
@@ -6,15 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+import java.util.Arrays;
 
 @Entity
 @Table(name = "photo", schema = "import_fl")
+
 public class photoDb {
-    @Id
+
     private String iin;
+    @Id
+
     private String document_type_id;
-    @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
+
     private byte[] photo;
     private String date;
 
@@ -50,5 +53,12 @@ public class photoDb {
         this.date = date;
     }
 
-
+    @Override
+    public String toString() {
+        return "photoDb{" +
+                "iin='" + iin + '\'' +
+                ", document_type_id='" + document_type_id + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 }

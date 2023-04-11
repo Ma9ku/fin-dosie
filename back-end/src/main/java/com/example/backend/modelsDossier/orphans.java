@@ -7,14 +7,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "orphans", schema = "ser")
 public class orphans {
-    @Id
     private String iin;
     private String region;
+
     private String distict;
     private String fio;
     private String orphanage_name;
     private String graduation_year;
     private String birth_date;
+    @Id
+
     private Integer id;
 
     public String getIin() {

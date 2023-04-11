@@ -7,7 +7,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "dormant", schema = "ser")
 public class dormant {
-    @Id
 
     private String iin_bin;
     private String rnn;
@@ -17,6 +16,8 @@ public class dormant {
     private String leader_iin;
     private String leader_rnn;
     private String order_number;
+    @Id
+
     private String order_date;
     private Integer id;
 
