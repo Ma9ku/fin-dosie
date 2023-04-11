@@ -9,13 +9,16 @@ import com.example.backend.repositoryDossier.mv_auto_fl_repo;
 import com.example.backend.service.MyService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@CrossOrigin(origins = "*", maxAge = 9000)
 public class DoseirController {
     @Autowired
     newPhotoRepo newPhotoRepo;
@@ -34,6 +37,11 @@ public class DoseirController {
     public NodesFL getChf() {
         NodesFL ss = myService.getNode("831013300660");
         return ss;
+    }
+
+    @GetMapping("/profile")
+    public NodesFL getProfile(@RequestParam String iin) {
+        return myService.getNode(iin);
     }
     @GetMapping("/cc")
     public NodesUL getChfc() {

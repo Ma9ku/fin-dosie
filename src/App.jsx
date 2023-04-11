@@ -9,8 +9,14 @@ import {
 } from "react-router-dom";
 import DosiePage from './pages/dosPage/DosiePage';
 
-function App() {
+import { createTheme, ThemeProvider } from '@mui/material';
 
+function App() {
+  const theme = createTheme({
+    palette: {
+      node: 'dark',
+    },
+  })
   return (
     <div className="App">
       <Router>
