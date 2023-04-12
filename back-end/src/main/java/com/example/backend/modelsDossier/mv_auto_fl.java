@@ -7,7 +7,6 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "mv_auto_fl", schema = "ser")
-
 public class mv_auto_fl {
 
     private String iin;

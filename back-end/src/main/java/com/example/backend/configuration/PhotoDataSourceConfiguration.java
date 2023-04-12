@@ -1,7 +1,7 @@
 package com.example.backend.configuration;
 
 import com.example.backend.modelsAuth.*;
-import com.example.backend.photo.modelsPhot.photoDb;
+import com.example.backend.photo.modelsPhot.*;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -40,7 +40,7 @@ public class PhotoDataSourceConfiguration {
             EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(photDataSource())
-                .packages( photoDb.class)
+                .packages(photoDb.class, fl_relatives.class, pdl.class, immoral_lifestyle.class, lawyers.class, bankrot.class, block_esf.class, mv_iin_doc.class)
                 .build();
     }
 
