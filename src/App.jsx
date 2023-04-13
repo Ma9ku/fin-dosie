@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import DosiePage from './pages/dosPage/DosiePage';
+import MainPage from './pages/mainPage/MainPage';
 
 import { createTheme, ThemeProvider } from '@mui/material';
 
@@ -21,7 +22,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-
+          <Route path='/main' element={
+            <MainPage/>
+          }/>
           <Route path='/' element={
             <DosiePage/>
           }/>
