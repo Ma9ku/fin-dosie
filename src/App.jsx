@@ -8,6 +8,9 @@ import {
   Route,
 } from "react-router-dom";
 import DosiePage from './pages/dosPage/DosiePage';
+import MainPage from './pages/mainPage/MainPage';
+import SearchPage from './pages/searchPage/SearchPage';
+// import TempSearch from './pages/tempSearch/tempSearch';
 
 function App() {
 
@@ -17,11 +20,19 @@ function App() {
         <Routes>
 
           <Route path='/' element={
+            <MainPage/>
+          }/>
+
+          <Route path='/profiler' element={
             <DosiePage/>
           }/>
 
           <Route path='/login' element={
             <div>Login route</div>
+          }/>
+
+          <Route path='/search' element={
+            <SearchPage/>
           }/>
 
         </Routes>
