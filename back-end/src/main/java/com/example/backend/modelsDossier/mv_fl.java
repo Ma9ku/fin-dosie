@@ -8,9 +8,10 @@ import javax.persistence.Table;
 @Table(name = "mv_fl", schema = "ser")
 
 public class mv_fl {
-    @Id
     private String iin;
     private String gender;
+    @Id
+
     private String birth_date;
     private String last_name;
     private String first_name;
@@ -22,6 +23,7 @@ public class mv_fl {
     private boolean is_resident;
     private String life_status_id;
     private String life_status_ru_name;
+
     private String death_date;
     private String birth_region_id;
     private String birth_region_name;

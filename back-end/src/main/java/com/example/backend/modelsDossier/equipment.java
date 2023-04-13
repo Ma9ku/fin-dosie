@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 public class equipment {
 
-    @Id
 
     private String owner_iin_bin;
     private String owner_name;
@@ -23,6 +22,8 @@ public class equipment {
     private String reg_series_num;
     private String reg_date;
     private String reg_reason;
+    @Id
+
     private String end_date;
     private String end_reason;
     private String vin;

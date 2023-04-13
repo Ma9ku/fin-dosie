@@ -12,13 +12,21 @@ import MainPage from './pages/mainPage/MainPage';
 import SearchPage from './pages/searchPage/SearchPage';
 // import TempSearch from './pages/tempSearch/tempSearch';
 
-function App() {
+import { createTheme, ThemeProvider } from '@mui/material';
 
+function App() {
+  const theme = createTheme({
+    palette: {
+      node: 'dark',
+    },
+  })
   return (
     <div className="App">
       <Router>
         <Routes>
-
+          <Route path='/main' element={
+            <MainPage/>
+          }/>
           <Route path='/' element={
             <MainPage/>
           }/>
