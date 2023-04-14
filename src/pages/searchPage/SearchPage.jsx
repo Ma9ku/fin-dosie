@@ -58,9 +58,7 @@ const Search = (props) => {
 
                         <div className="tab__content">
                         </div>
-                        <div className='tab__result'>
-                            RES
-                        </div>
+                        
                     </div>
                 </div>
             </div>

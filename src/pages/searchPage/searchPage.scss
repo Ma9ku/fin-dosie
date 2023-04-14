@@ -7,11 +7,14 @@
     font-family: 'Montserrat';
 }
 
+
+
 .searchtabs {
     width: 90%;
     margin: 0 auto;
     margin-top: 2%;
 
+    
     // border: 1px solid green;
 }
 
@@ -60,6 +63,13 @@ $tab-wrap-border-radius: 2px;
 }
 
 .tab__content {
+    height: 500px;
+    overflow-y: scroll !important; 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 .tab {
@@ -136,6 +146,7 @@ $tab-wrap-border-radius: 2px;
 
 .searchPage .searchResultBlock {
     width: 80%;
+
 
     margin-left: 64px;
     margin-top: 60px;
