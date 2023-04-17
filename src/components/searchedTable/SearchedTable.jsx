@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import {Link} from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -36,11 +36,14 @@ const thStyle = {
 }
 
 function SearchedTable(props) {
-  const resultDisplay = () => {
-    if (props.result.length == 0) {
+    const getPerson = (iin) => {
 
+    }
+  const resultDisplay = () => {
+    if (props.result == null) {
+        return null
     } else {
-      props.result.map((row, index) => (
+      return props.result.map((row, index) => (
         <TableRow
           key={index}
           sx={{ 'td, th': { border: 0 } }}
@@ -52,7 +55,7 @@ function SearchedTable(props) {
           <TableCell sx={tdStyle} align="left">{row.last_name}</TableCell>
           <TableCell sx={tdStyle} align="left">{row.patronymic}</TableCell>
           <TableCell sx={tdStyle} align="left">{row.iin}</TableCell>
-          <TableCell sx={tdStyle} align="left">Перейти..</TableCell>
+          <TableCell sx={tdStyle} align="left"><Link to={'/profiler/person/'+ row.iin}>Перейти..</Link></TableCell>
         </TableRow>
       ))
     }
@@ -71,7 +74,7 @@ function SearchedTable(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {resultDisplay}
+              {resultDisplay()}
             </TableBody>
           </Table>
         </TableContainer>

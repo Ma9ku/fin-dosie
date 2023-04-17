@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin(origins = "http://localhost:5174", maxAge = 5174)
+@CrossOrigin(origins = "*", maxAge = 5179)
 public class DoseirController {
     @Autowired
     newPhotoRepo newPhotoRepo;

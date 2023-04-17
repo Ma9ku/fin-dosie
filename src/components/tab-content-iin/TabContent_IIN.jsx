@@ -22,7 +22,7 @@ const baseURL = 'http://localhost:9095/'
 
 function TabConent_IIN(props) {
     const [iin, setIIN] = React.useState('');
-    const [result, setResult] = React.useState({});
+    const [result, setResult] = React.useState(null);
 
     const handleIIN = (event) => {
         setIIN(event.target.value)
