@@ -1,7 +1,11 @@
 package com.example.backend.service;
 
 import com.example.backend.modelsDossier.*;
+import com.example.backend.photo.modelsPhot.fl_relatives;
 import com.example.backend.photo.modelsPhot.photoDb;
+import com.example.backend.photo.modelsPhot.reg_address_fl;
+import com.example.backend.photo.repositoryPhot.fl_relativesRepository;
+import com.example.backend.photo.repositoryPhot.reg_address_fl_Repo;
 import com.example.backend.repositoryDossier.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +36,10 @@ public class MyService {
     dormant_repo dormantRepo;
     @Autowired
     mv_ul_repo mv_ul_repo;
+    @Autowired
+    fl_relativesRepository fl_relativesRepository;
+    @Autowired
+    reg_address_fl_Repo regAddressFlRepo;
     private NodesFL tryAddPhoto(NodesFL node, String IIN) {
         try {
             List<photoDb> photos = new ArrayList<>();
@@ -62,6 +70,7 @@ public class MyService {
         return properties;
     }
 
+
     public NodesFL getNode(String IIN){
         NodesFL myNode = new NodesFL();
         List<mv_auto_fl> myMv_auto_fl =  mvAutoFlRepo.getUsersByLike(IIN);
@@ -71,8 +80,11 @@ public class MyService {
         List<adm> MyAdm =  admRepo.getUsersByLike(IIN);
         List<dormant> myDormant =  dormantRepo.getUsersByLike(IIN);
         List<equipment> myEquipment =  equipment_repo.getUsersByLike(IIN);
+        List<fl_relatives> relatives = fl_relativesRepository.getRelativesByFio(IIN);
+        List<reg_address_fl> addressFls = regAddressFlRepo.getByIIN(IIN);
         omn myOmns =  omn_repos.getUsersByLikeIin_bins(IIN);
         myOmn.add(myOmns);
+        myNode.setRegAddressFls(addressFls);
         myNode = tryAddPhoto(myNode,IIN);
         myNode.setMvFls(myMv_fl);
         myNode.setMvAutoFls(myMv_auto_fl);
@@ -81,6 +93,7 @@ public class MyService {
         myNode.setAdms(MyAdm);
         myNode.setDormants(myDormant);
         myNode.setEquipment(myEquipment);
+        myNode.setFl_relatives(relatives);
         return myNode;
     }
  public NodesUL getNodeUL(String BIN){
@@ -97,5 +110,4 @@ public class MyService {
         myNode.setEquipment(myEquipment);
         return myNode;
     }
-
 }
