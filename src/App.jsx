@@ -32,16 +32,17 @@ function App() {
           }/>
 
           <Route path='/profiler' element={
-            <DosiePage/>
+            <SearchPage/>
           }/>
+
+          {/* <Route path='/profiler' element={
+            <DosiePage/>
+          }/> */}
 
           <Route path='/login' element={
             <div>Login route</div>
           }/>
 
-          <Route path='/search' element={
-            <SearchPage/>
-          }/>
 
         </Routes>
       </Router>

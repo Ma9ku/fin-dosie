@@ -46,6 +46,10 @@ display: flex;
     margin: 0 auto;
     margin-top: 50px;
     width: 90%;
+
+    .block {
+        cursor: pointer;
+    }
 }
 
 .block:nth-child(1) {
