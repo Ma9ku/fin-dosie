@@ -10,7 +10,7 @@ import Navbar from '../../components/nav-bar/Navbar';
 
 const MainPage = (props) => {
     const navigate = useNavigate();
-    return (  
+    return (
         <>
             <Navbar/>
             <div className='container'>

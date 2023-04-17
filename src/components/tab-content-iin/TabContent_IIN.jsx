@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
@@ -17,7 +18,23 @@ const inputStyle = {
     // width: '300px',
 }
 
+const baseURL = 'http://localhost:9095/'
+
 function TabConent_IIN(props) {
+    const [iin, setIIN] = React.useState('');
+    const [result, setResult] = React.useState(null);
+
+    const handleIIN = (event) => {
+        setIIN(event.target.value)
+    }
+    const searchIIN = async () => {
+        const params = {iin: iin}
+        console.log(params)
+        axios.get(baseURL+'iin', {params: params}).then(res => {
+            console.log(res.data)
+            setResult(res.data)
+        })
+    }
     return ( 
         <div className="tab__content">
             <FormControl sx={{
@@ -26,7 +43,7 @@ function TabConent_IIN(props) {
                     width: '40%', 
                     marginBottom: '20px'  
                 }} fullWidth> 
-                <a className='fieldText' style={{marginBottom: '5px', marginLeft: '10px'}}>ИИН</a>
+                <a className='fieldText'  style={{marginBottom: '5px', marginLeft: '10px'}}>ИИН</a>
                 <div style={{ 
                         display: 'flex', 
                         marginLeft: '0 auto' 
@@ -40,6 +57,8 @@ function TabConent_IIN(props) {
                         }} 
                         id="outlined-basic" 
                         inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                        value={iin}
+                        onChange={handleIIN}
                         variant="outlined" />
                     <Button sx={{
                             height: '34px', 
@@ -47,7 +66,8 @@ function TabConent_IIN(props) {
                             color: 'white', 
                             width: 'fit-content', 
                             marginLeft: 3 
-                        }} variant="contained">
+                        }} variant="contained"
+                        onClick={searchIIN}>
                         <span className='buttonSearch'>Запрос</span>
                     </Button>
                 </div>
@@ -155,7 +175,7 @@ function TabConent_IIN(props) {
 
             <div className='searchResultBlock'>
                 <p>Результат</p>
-                <SearchedTable/>
+                <SearchedTable result={result}/>
             </div>
         </div>
     );

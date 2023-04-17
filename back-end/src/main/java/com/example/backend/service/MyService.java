@@ -70,6 +70,10 @@ public class MyService {
         return properties;
     }
 
+    public List<mv_fl> searchByIIN(String IIN) {
+        return mv_FlRepo.getUsersByLike(IIN);
+    }
+
 
     public NodesFL getNode(String IIN){
         NodesFL myNode = new NodesFL();

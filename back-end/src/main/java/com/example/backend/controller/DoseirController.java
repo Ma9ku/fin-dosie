@@ -2,6 +2,7 @@ package com.example.backend.controller;
 
 import com.example.backend.modelsDossier.NodesFL;
 import com.example.backend.modelsDossier.NodesUL;
+import com.example.backend.modelsDossier.mv_fl;
 import com.example.backend.photo.modelsPhot.photoDb;
 import com.example.backend.photo.repositoryPhot.newPhotoRepo;
 import com.example.backend.repositoryDossier.esf_all2Repo;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin(origins = "*", maxAge = 9000)
+@CrossOrigin(origins = "*", maxAge = 5179)
 public class DoseirController {
     @Autowired
     newPhotoRepo newPhotoRepo;
@@ -47,5 +48,10 @@ public class DoseirController {
     public NodesUL getChfc() {
         NodesUL ss = myService.getNodeUL("170740007045");
         return ss;
+    }
+
+    @GetMapping("/iin")
+    public List<mv_fl> getByIIN(@RequestParam String iin) {
+        return myService.searchByIIN(iin);
     }
 }

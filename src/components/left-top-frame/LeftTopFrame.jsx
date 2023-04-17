@@ -4,24 +4,24 @@ import TextField from '@mui/material/TextField';
 import './leftTopFrame.scss'
 
 function LeftTopFrame(props) {
-    const [iin, setIIN] = useState("")
-
-    const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
-
-            if (event.target.value !== iin) {
-                setIIN(event.target.value)
-                console.log(event.target.value)
-                props.fetchIIN(event.target.value)
-            }
-        }
-    }
+    // const [iin, setIIN] = useState("")
+    //
+    // const handleKeyDown = (event) => {
+    //     if (event.key === "Enter") {
+    //
+    //         if (event.target.value !== iin) {
+    //             setIIN(event.target.value)
+    //             console.log(event.target.value)
+    //             props.fetchIIN(event.target.value)
+    //         }
+    //     }
+    // }
 
     return ( 
         <div className="left-top-section">
             <div className="first-line">
                 <div className="avatar">
-                    <img src={props.data.avatarImg} alt="No Image" />    
+                    <img src={props.data.photoDbf[0].photo} alt="No Image" />
                 </div>    
                 <div className='person-main-info'>
                     <div>

@@ -35,7 +35,7 @@ function App() {
             <SearchPage/>
           }/>
 
-          <Route path='/profiler/person' element={
+          <Route path='/profiler/person/:iin' element={
             <DosiePage/>
           }/>
 
