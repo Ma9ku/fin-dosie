@@ -57,11 +57,11 @@ function RightTopFrame() {
                         <Table aria-label="collapsible table" className="uitable">
                             <TableHead>
                             <TableRow className="uitableHead"  style={{borderBottom: 'hidden'}}>
-                                <TableCell sx={{padding: 1}}style={{ width: '5%',fontSize: '12px'}} align="left"><a>№</a></TableCell>
-                                <TableCell sx={{padding: 1}}style={{ width: '50%', fontSize: '12px' }} align="left"><a className="bumber">ФИО</a></TableCell>
-                                <TableCell sx={{padding: 1}}style={{ width: '20%', fontSize: '12px' }} align="left"><a className="bumber">ИИН</a></TableCell>
-                                <TableCell sx={{padding: 1}}style={{ width: '15%' }} align="left"></TableCell>
-                                <TableCell sx={{padding: 1}}style={{ width: '10%' }} align="left"></TableCell>
+                                <TableCell sx={{padding: 1}} style={{ width: '5%',fontSize: '12px', color: "#6D6D6D"}} align="left"><a>№</a></TableCell>
+                                <TableCell sx={{padding: 1}} style={{ width: '50%', fontSize: '12px', color: "#6D6D6D" }} align="left"><a className="bumber">ФИО</a></TableCell>
+                                <TableCell sx={{padding: 1}} style={{ width: '20%', fontSize: '12px', color: "#6D6D6D" }} align="left"><a className="bumber">ИИН</a></TableCell>
+                                <TableCell sx={{padding: 1}} style={{ width: '15%', color: "#6D6D6D" }} align="left"></TableCell>
+                                <TableCell sx={{padding: 1}} style={{ width: '10%', color: "#6D6D6D" }} align="left"></TableCell>
                             </TableRow>
                             </TableHead> 
                             <TableBody style={{borderBottom: 'hidden'}}>
@@ -85,10 +85,10 @@ function Row(props) {
     return (
       <>
         <TableRow className="uitablerow" sx={{height:'10px',}} style={{borderBottom: 'hidden'}}>
-            <TableCell sx={{padding: 1}} style={{fontSize: '12px', fontWeight: 500}}><a>{props.index + 1}</a></TableCell>
-          <TableCell sx={{padding: 1}} style={{ width: '60%', paddingLeft: '18px', fontSize: '12px', fontWeight: 500 }} align="left"><a>{row.fio}</a></TableCell>
-          <TableCell sx={{padding: 1}} style={{ paddingLeft: '18px', fontSize: '12px', fontWeight: 500 }}><a>{row.iin}</a></TableCell>
-          <TableCell sx={{padding: 1}} style={{fontSize: '12px', fontWeight: 500 }}><a>Перейти...</a></TableCell>
+          <TableCell sx={{padding: 1}} style={{fontSize: '12px', fontWeight: 500, color: "#FFFFFF"}}><a>{props.index + 1}</a></TableCell>
+          <TableCell sx={{padding: 1}} style={{ width: '60%', paddingLeft: '18px', fontSize: '12px', fontWeight: 500, color: "#FFFFFF" }} align="left"><a>{row.fio}</a></TableCell>
+          <TableCell sx={{padding: 1}} style={{ paddingLeft: '18px', fontSize: '12px', fontWeight: 500, color: "#FFFFFF" }}><a>{row.iin}</a></TableCell>
+          <TableCell sx={{padding: 1}} style={{fontSize: '12px', fontWeight: 500, color: "#FFFFFF" }}><a>Перейти...</a></TableCell>
           <TableCell sx={{padding: 1}}>
             <IconButton
               aria-label="expand row"
@@ -106,24 +106,24 @@ function Row(props) {
                 <Table size="small" aria-label="purchases">
                   <TableHead>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px' }}  align="left"><a>Место рождения</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px'  }} align="left"><a>{row.birth_location}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Место рождения</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.birth_location}</a></TableCell>
                     </TableRow>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px' }}  align="left"><a>Национальность</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px'  }} align="left"><a>{row.nationality}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D"}}  align="left"><a>Национальность</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.nationality}</a></TableCell>
                     </TableRow>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px' }}  align="left"><a>Гражданство</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px'  }} align="left"><a>{row.citezenship}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Гражданство</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.citezenship}</a></TableCell>
                     </TableRow>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px' }}  align="left"><a>Дата рождения</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px'  }} align="left"><a>{row.birth_date}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Дата рождения</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.birth_date}</a></TableCell>
                     </TableRow>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px' }} align="left"><a>Адресс прописки</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px'  }} align="left"><a>{row.address}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }} align="left"><a>Адресс прописки</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF"}} align="left"><a>{row.address}</a></TableCell>
                     </TableRow>
                     {/* <TableRow style={{borderBottom: 'hidden'}}>
                       <TableCell style={{ width: '20%' }} align="left"><a>Связи</a></TableCell>

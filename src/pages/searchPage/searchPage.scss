@@ -63,13 +63,31 @@ $tab-wrap-border-radius: 2px;
 }
 
 .tab__content {
-    height: 500px;
+    height: 70vh;
     overflow-y: scroll !important; 
     &::-webkit-scrollbar {
         display: none;
     }
     -ms-overflow-style: none; 
     scrollbar-width: none; 
+}
+
+@media only screen and (max-height: 700px) {
+    .tab__content {
+        height: 60vh;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .tab__content {
+        height: 50vh;
+    }
+}
+
+@media only screen and (min-height: 1000px) {
+    .tab__content {
+        height: max-content;
+    }
 }
 
 .tab {
@@ -130,7 +148,7 @@ $tab-wrap-border-radius: 2px;
     }
 
     &__content {
-        padding: 100px 25px;
+        padding: 30px 25px;
         background-color: transparent;
         position: absolute;
         width: 100%;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './mainPage.scss'
 import logo from '../../../background/logoFinpollWithBACK.png'
 import itap from '../../../background/itapLogo.png'
@@ -9,11 +9,8 @@ import profiler from '../../../background/profilerLogo.png'
 import Navbar from '../../components/nav-bar/Navbar';
 
 const MainPage = (props) => {
-    const navigate = useNavigate()
-    const  profilerPage = () => {
-        navigate('/search')
-    }
-    return (  
+    const navigate = useNavigate();
+    return (
         <>
             <Navbar/>
             <div className='container'>
@@ -21,17 +18,23 @@ const MainPage = (props) => {
                 <img src={logo} className='logo'></img>
             </div>
             <div className='blockdiv'>
-                <div className='block'>
+                <div className='block' onClick={() => {
+                    navigate("/itap")
+                }}>
                     <img src={itap} className='block-img'></img>
                     <a>ITap</a>
                     <p>Инструмент по поиску связей</p>
                 </div>
-                <div className='block'>
+                <div className='block' onClick={() => {
+                    navigate("/superset")
+                }}>
                     <img src={superset} className='block-img'></img>
                     <a>Superset</a>
                     <p>Инструмент по работе с данными</p>
                 </div>
-                <div className='block' onClick={profilerPage}>
+                <div className='block' onClick={() => {
+                    navigate("/profiler")
+                }}>
                     <img src={profiler} className='block-img'></img>
                     <a>Profiler</a>
                     <p>Инструмент для поиска людей</p>
