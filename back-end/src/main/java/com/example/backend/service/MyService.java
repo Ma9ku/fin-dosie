@@ -84,7 +84,7 @@ public class MyService {
         List<adm> MyAdm =  admRepo.getUsersByLike(IIN);
         List<dormant> myDormant =  dormantRepo.getUsersByLike(IIN);
         List<equipment> myEquipment =  equipment_repo.getUsersByLike(IIN);
-        List<fl_relatives> relatives = fl_relativesRepository.getRelativesByFio(IIN);
+//        List<fl_relatives> relatives = fl_relativesRepository.getRelativesByFio(IIN);
         List<reg_address_fl> addressFls = regAddressFlRepo.getByIIN(IIN);
         omn myOmns =  omn_repos.getUsersByLikeIin_bins(IIN);
         myOmn.add(myOmns);
@@ -97,7 +97,7 @@ public class MyService {
         myNode.setAdms(MyAdm);
         myNode.setDormants(myDormant);
         myNode.setEquipment(myEquipment);
-        myNode.setFl_relatives(relatives);
+//        myNode.setFl_relatives(relatives);
         return myNode;
     }
  public NodesUL getNodeUL(String BIN){
