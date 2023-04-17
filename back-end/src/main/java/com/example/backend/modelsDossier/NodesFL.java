@@ -1,6 +1,8 @@
 package com.example.backend.modelsDossier;
 
+import com.example.backend.photo.modelsPhot.fl_relatives;
 import com.example.backend.photo.modelsPhot.photoDb;
+import com.example.backend.photo.modelsPhot.reg_address_fl;
 
 import java.util.List;
 
@@ -14,6 +16,24 @@ public class NodesFL {
     private List<equipment> equipment;
     private List<dormant> dormants;
     private List<adm> adms;
+    private List<fl_relatives> fl_relatives;
+    private List<reg_address_fl> regAddressFls;
+
+    public List<reg_address_fl> getRegAddressFls() {
+        return regAddressFls;
+    }
+
+    public void setRegAddressFls(List<reg_address_fl> regAddressFls) {
+        this.regAddressFls = regAddressFls;
+    }
+
+    public List<com.example.backend.photo.modelsPhot.fl_relatives> getFl_relatives() {
+        return fl_relatives;
+    }
+
+    public void setFl_relatives(List<com.example.backend.photo.modelsPhot.fl_relatives> fl_relatives) {
+        this.fl_relatives = fl_relatives;
+    }
 
     public List<orphans> getOrphanss() {
         return orphanss;
