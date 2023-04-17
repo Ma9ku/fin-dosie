@@ -52,7 +52,7 @@ function RightTopFrame(props) {
         <div className="right-top-section">
             <div className="other-line">
                 <div>
-                    <label htmlFor="born-city" style={{fontSize: '15px', fontWeight: '600'}}>Родственники</label>
+                    <label htmlFor="born-city" style={{fontSize: '15px', fontWeight: '600', color: "#FFFFFF"}}>Родственники</label>
                     <TableContainer>
                         <Table aria-label="collapsible table" className="uitable">
                             <TableHead>
