@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 import './mainPage.scss'
 import logo from '../../../background/logoFinpollWithBACK.png'
 import itap from '../../../background/itapLogo.png'
@@ -8,6 +9,10 @@ import profiler from '../../../background/profilerLogo.png'
 import Navbar from '../../components/nav-bar/Navbar';
 
 const MainPage = (props) => {
+    const navigate = useNavigate()
+    const  profilerPage = () => {
+        navigate('/search')
+    }
     return (  
         <>
             <Navbar/>
@@ -26,7 +31,7 @@ const MainPage = (props) => {
                     <a>Superset</a>
                     <p>Инструмент по работе с данными</p>
                 </div>
-                <div className='block'>
+                <div className='block' onClick={profilerPage}>
                     <img src={profiler} className='block-img'></img>
                     <a>Profiler</a>
                     <p>Инструмент для поиска людей</p>

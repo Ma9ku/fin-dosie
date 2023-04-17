@@ -36,6 +36,27 @@ const thStyle = {
 }
 
 function SearchedTable(props) {
+  const resultDisplay = () => {
+    if (props.result.length == 0) {
+
+    } else {
+      props.result.map((row, index) => (
+        <TableRow
+          key={index}
+          sx={{ 'td, th': { border: 0 } }}
+        >
+          <TableCell sx={tdStyle} component="td" scope="row">
+            {index+1}
+          </TableCell>
+          <TableCell sx={tdStyle} align="left">{row.first_name}</TableCell>
+          <TableCell sx={tdStyle} align="left">{row.last_name}</TableCell>
+          <TableCell sx={tdStyle} align="left">{row.patronymic}</TableCell>
+          <TableCell sx={tdStyle} align="left">{row.iin}</TableCell>
+          <TableCell sx={tdStyle} align="left">Перейти..</TableCell>
+        </TableRow>
+      ))
+    }
+  }
     return (
         <TableContainer component={Paper} sx={{border: 0, boxShadow: 'none', borderRadius: 0, backgroundColor: "#6D6D6D"}}>
           <Table sx={{ minWidth: 650, background: "#0D0F11"}} aria-label="simple table">
@@ -50,21 +71,7 @@ function SearchedTable(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.number}
-                  sx={{ 'td, th': { border: 0 } }}
-                >
-                  <TableCell sx={tdStyle} component="td" scope="row">
-                    {row.number}
-                  </TableCell>
-                  <TableCell sx={tdStyle} align="left">{row.fname}</TableCell>
-                  <TableCell sx={tdStyle} align="left">{row.lname}</TableCell>
-                  <TableCell sx={tdStyle} align="left">{row.fathName}</TableCell>
-                  <TableCell sx={tdStyle} align="left">{row.IIN}</TableCell>
-                  <TableCell sx={tdStyle} align="left">Перейти</TableCell>
-                </TableRow>
-              ))}
+              {resultDisplay}
             </TableBody>
           </Table>
         </TableContainer>
