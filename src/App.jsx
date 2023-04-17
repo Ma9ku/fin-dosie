@@ -35,9 +35,9 @@ function App() {
             <SearchPage/>
           }/>
 
-          {/* <Route path='/profiler' element={
+          <Route path='/profiler/person' element={
             <DosiePage/>
-          }/> */}
+          }/>
 
           <Route path='/login' element={
             <div>Login route</div>
