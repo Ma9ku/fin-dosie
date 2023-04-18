@@ -5,6 +5,7 @@ import com.example.backend.photo.modelsPhot.fl_relatives;
 import com.example.backend.photo.modelsPhot.photoDb;
 import com.example.backend.photo.modelsPhot.reg_address_fl;
 import com.example.backend.photo.repositoryPhot.fl_relativesRepository;
+import com.example.backend.photo.repositoryPhot.pdlReposotory;
 import com.example.backend.photo.repositoryPhot.reg_address_fl_Repo;
 import com.example.backend.repositoryDossier.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,8 @@ public class MyService {
     fl_relativesRepository fl_relativesRepository;
     @Autowired
     reg_address_fl_Repo regAddressFlRepo;
+    @Autowired
+    pdlReposotory pdlReposotory;
     private NodesFL tryAddPhoto(NodesFL node, String IIN) {
         try {
             List<photoDb> photos = new ArrayList<>();
@@ -84,7 +87,7 @@ public class MyService {
         List<adm> MyAdm =  admRepo.getUsersByLike(IIN);
         List<dormant> myDormant =  dormantRepo.getUsersByLike(IIN);
         List<equipment> myEquipment =  equipment_repo.getUsersByLike(IIN);
-//        List<fl_relatives> relatives = fl_relativesRepository.getRelativesByFio(IIN);
+        List<fl_relatives> relatives = fl_relativesRepository.getRelativesByFio(IIN);
         List<reg_address_fl> addressFls = regAddressFlRepo.getByIIN(IIN);
         omn myOmns =  omn_repos.getUsersByLikeIin_bins(IIN);
         myOmn.add(myOmns);
@@ -97,7 +100,8 @@ public class MyService {
         myNode.setAdms(MyAdm);
         myNode.setDormants(myDormant);
         myNode.setEquipment(myEquipment);
-//        myNode.setFl_relatives(relatives);
+        myNode.setFl_relatives(relatives);
+        myNode.setPdls(pdlReposotory.getByIIN(IIN));
         return myNode;
     }
  public NodesUL getNodeUL(String BIN){

@@ -42,35 +42,113 @@ function LeftTopFrame(props) {
                 <div className='person-main-info'>
                     <div>
                         <label htmlFor="pName">Имя</label>
-                        <input readOnly type="text" name="pName" value={first_name || "---"} className={props.data.fName ? "" : "disabledInput"} id="pName" placeholder='Салтанат' />
+                        <TextField sx={{ 
+                            flex: 1, 
+                            border: "1px solid #565656", 
+                            borderRadius: "4px",
+                            height: '10px'
+                        }}  
+ 
+                        id="filled-read-only-input" 
+                        // inputProps={{'aria-label': 'Without label' }} 
+                        value={first_name || '---'}
+                        variant="outlined" />
+                        {/* <input readOnly type="text" name="pName" value={first_name || "---"} className={props.data.fName ? "" : "disabledInput"} id="pName" placeholder='Салтанат' /> */}
                     </div>
                     <div>
                         <label htmlFor="pFam">Фамилия</label>
-                        <input readOnly type="text" name="pFam" value={last_name || "---"} className={props.data.lName ? "" : "disabledInput"} id="pFam" placeholder='Бибер' />
+                        <TextField sx={{ 
+                            flex: 1, 
+                            borderRadius: "4px",
+                            height: '10px'
+                        }}  
+ 
+                        id="filled-read-only-input" 
+                        // inputProps={{'aria-label': 'Without label' }} 
+                        value={last_name || '---'}
+                        variant="outlined" />
                     </div>
                     <div>
                         <label htmlFor="pOtch">Отчество</label>
-                        <input readOnly type="text" name="pOtch" value={patronymic || "---"} className={props.data.fathName ? "" : "disabledInput"} id="pOtch" placeholder='---' />
+                        <TextField sx={{ 
+                            flex: 1, 
+                            borderRadius: "4px",
+                            height: '10px'
+                        }}  
+ 
+                        id="filled-read-only-input" 
+                        // inputProps={{'aria-label': 'Without label' }} 
+                        value={patronymic || '---'}
+                        variant="outlined" />
                     </div>
                     <div>
                         <label htmlFor="pIIN">ИИН</label>
-                        <input readOnly value={iin || "---"} type="text" name="pIIN" id="pIIN" />
+                        <TextField sx={{ 
+                            flex: 1, 
+                            borderRadius: "4px",
+                            height: '10px'
+                        }}  
+ 
+                        id="filled-read-only-input" 
+                        // inputProps={{'aria-label': 'Without label' }} 
+                        value={iin || '---'}
+                        variant="outlined" />
                     </div>
                 </div>
             </div> 
             <div className="other-line">
-                {/* <div>
+                <div>
                     <label htmlFor="born-city">Дата рождения</label>
-                    <input type="text" name="born-city" value={props.data[0].birth_date || "---"} className="disabledInput" id="born-city" placeholder='' />
+                    <TextField sx={{ 
+                        flex: 1, 
+                        borderRadius: "4px",
+                        height: '10px',
+                    }}  
+
+                    id="filled-read-only-input" 
+                    // inputProps={{'aria-label': 'Without label' }} 
+                    value={props.data[0].birth_date || "---"}
+                    variant="outlined" />
                 </div>
                 <div>
                     <label htmlFor="nationality">Национальность</label>
-                    <input type="text" name="nationality" value={props.data[0].nationality_ru_name || "---"} className="disabledInput" id="nationality" placeholder='Казашка' />
+                    <TextField sx={{ 
+                        flex: 1, 
+                        borderRadius: "4px",
+                        height: '10px',
+                    }}  
+
+                    id="filled-read-only-input" 
+                    // inputProps={{'aria-label': 'Without label' }} 
+                    value={props.data[0].nationality_ru_name || "---"}
+                    variant="outlined" />
                 </div>
                 <div>
                     <label htmlFor="citizenship">Гражданство</label>
-                    <input type="text" name="citizenship" value={props.data[0].citizenship_ru_name || "---"} className="disabledInput" id="citizenship" placeholder='Казахстан' />
-                </div> */}
+                    <TextField sx={{ 
+                        flex: 1, 
+                        borderRadius: "4px",
+                        height: '10px',
+                    }}  
+
+                    id="filled-read-only-input" 
+                    // inputProps={{'aria-label': 'Without label' }} 
+                    value={props.data[0].citizenship_ru_name || "---"}
+                    variant="outlined" />
+                </div>
+                <div>
+                    <label htmlFor="citizenship">Пол</label>
+                    <TextField sx={{ 
+                        flex: 1, 
+                        borderRadius: "4px",
+                        height: '10px',
+                    }}  
+
+                    id="filled-read-only-input" 
+                    // inputProps={{'aria-label': 'Without label' }} 
+                    value={props.data[0].gender==='1' ? 'МУЖЧИНА' : 'ЖЕНЩИНА'}
+                    variant="outlined" />
+                </div>
             </div>   
         </div>
     );

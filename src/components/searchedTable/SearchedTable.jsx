@@ -51,11 +51,9 @@ function SearchedTable(props) {
           <TableCell sx={tdStyle} component="td" scope="row">
             {index+1}
           </TableCell>
-          <TableCell sx={tdStyle} align="left">{row.first_name}</TableCell>
-          <TableCell sx={tdStyle} align="left">{row.last_name}</TableCell>
-          <TableCell sx={tdStyle} align="left">{row.patronymic}</TableCell>
+          <TableCell sx={tdStyle} align="left">{row.first_name} {row.last_name} {row.patronymic}</TableCell>
           <TableCell sx={tdStyle} align="left">{row.iin}</TableCell>
-          <TableCell sx={tdStyle} align="left"><Link to={'/profiler/person/'+ row.iin}>Перейти..</Link></TableCell>
+          <TableCell sx={tdStyle} align="left"><Link style={{textDecoration: 'none', color: 'white'}} className='goLink' to={'/profiler/person/'+ row.iin}>Перейти..</Link></TableCell>
         </TableRow>
       ))
     }
@@ -66,9 +64,7 @@ function SearchedTable(props) {
             <TableHead>
               <TableRow>
                 <TableCell sx={thStyle}>№</TableCell>
-                <TableCell sx={thStyle} align="left"><span style={{}}>Имя</span></TableCell>
-                <TableCell sx={thStyle} align="left"><span>Фамилия</span></TableCell>
-                <TableCell sx={thStyle} align="left"><span>Отчество</span></TableCell>
+                <TableCell sx={thStyle} align="left"><span style={{}}>ФИО</span></TableCell>
                 <TableCell sx={thStyle} align="left"><span>ИИН</span></TableCell>
                 <TableCell sx={thStyle} align="left"><span>Действие</span></TableCell>
               </TableRow>

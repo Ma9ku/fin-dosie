@@ -17,27 +17,12 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 function RightTopFrame(props) {
+  const soc = ''
+  const [relatives, setRelatives] = useState([])
 
-    const relatives = [
-        {
-            fio: "ЕСЕНУЛЫ ТЕМИРЛАН",
-            iin: '040205551504',
-            birth_location: 'ЖЕТИСАЙ',
-            nationality: 'КАЗАХ',
-            citezenship: 'КАЗАХСТАН',
-            birth_date: '2004-02-05',
-            address: 'ЫКЫЛАС ДУКЕНУЛЫ 38'
-        },
-        {
-            fio: "БЕГЕНОВ ДАМИР",
-            iin: '040219523323',
-            birth_location: 'ХРОМТАУ',
-            nationality: 'КАЗАХ',
-            citezenship: 'КАЗАХСТАН',
-            birth_date: '2004-02-10',
-            address: 'УЛЫ ДАЛА 27/3'
-        }
-    ]
+  useEffect(() => {
+    setRelatives(props.relatives)
+  }, [soc])
 
 
     const displayData = () => {
@@ -52,8 +37,8 @@ function RightTopFrame(props) {
         <div className="right-top-section">
             <div className="other-line">
                 <div>
-                    <label htmlFor="born-city" style={{fontSize: '15px', fontWeight: '600', color: "#FFFFFF"}}>Родственники</label>
-                    <TableContainer>
+                    <label htmlFor="born-city" style={{fontSize: '16px', fontWeight: '500', color: "#FFFFFF"}}>Родственники</label>
+                    <TableContainer sx={{marginTop: '10px'}}>
                         <Table aria-label="collapsible table" className="uitable">
                             <TableHead>
                             <TableRow className="uitableHead"  style={{borderBottom: 'hidden'}}>
@@ -100,35 +85,19 @@ function Row(props) {
           </TableCell>
         </TableRow>
         <TableRow style={{borderBottom: 'hidden'}}>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={4}>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1, marginLeft: '20px' }}>
+              <Box sx={{ margin: 1, marginLeft: '4%' }}>
                 <Table size="small" aria-label="purchases">
                   <TableHead>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Место рождения</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.birth_location}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>ИИН</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.iin}</a></TableCell>
                     </TableRow>
                     <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D"}}  align="left"><a>Национальность</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.nationality}</a></TableCell>
+                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D"}}  align="left"><a>Тип родства</a></TableCell>
+                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.relative_type}</a></TableCell>
                     </TableRow>
-                    <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Гражданство</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.citezenship}</a></TableCell>
-                    </TableRow>
-                    <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>Дата рождения</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.birth_date}</a></TableCell>
-                    </TableRow>
-                    <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }} align="left"><a>Адресс прописки</a></TableCell>
-                      <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF"}} align="left"><a>{row.address}</a></TableCell>
-                    </TableRow>
-                    {/* <TableRow style={{borderBottom: 'hidden'}}>
-                      <TableCell style={{ width: '20%' }} align="left"><a>Связи</a></TableCell>
-                      <TableCell style={{ width: '80%' }} align="left"><a>{row.request_rels.length>0 ? row.request_rels.join(','): "Связи не установлены"}</a></TableCell>
-                    </TableRow> */}
                   </TableHead>
                 </Table>
               </Box>
