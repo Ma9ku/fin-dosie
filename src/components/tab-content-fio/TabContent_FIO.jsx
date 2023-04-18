@@ -10,6 +10,8 @@ import Select from '@mui/material/Select';
 import SearchedTable from '../../components/searchedTable/SearchedTable';
 import './tabContent_fio.scss'
 
+import DopInfoBlock from '../dop-info-block/DopInfoBlock';
+
 const selectStyle = {
     width: '200px',
     height: '35px',
@@ -70,7 +72,9 @@ function TabContent_FIO(props) {
             <div className='dopInfa'>
 
                 <div onClick={() => setShowDopInfo((prev) => !prev)}>Дополнительные данные</div>
-                {showDopInfo ? <div>пфпфвп</div> : ""}
+                {showDopInfo ? 
+                    <DopInfoBlock/>
+                : ""}
             </div>
 
             <div style={{display: "flex", justifyContent: "flex-start", paddingLeft: "70%"}}>
