@@ -1,0 +1,19 @@
+.displayFlexTwoColumns {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+
+    > div:nth-child(1) {
+        width: 50%;
+    }
+
+    > div:nth-child(2) {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 100%;
+        }
+    }
+}

@@ -10,6 +10,8 @@ import Select from '@mui/material/Select';
 import SearchedTable from '../../components/searchedTable/SearchedTable';
 import './tabContent_fio.scss'
 
+import DopInfoBlock from '../dop-info-block/DopInfoBlock';
+
 const selectStyle = {
     width: '200px',
     height: '35px',
@@ -29,14 +31,26 @@ const selectStyle = {
 function TabContent_FIO(props) {
     const [showDopInfo, setShowDopInfo] = useState(false)
 
+    const [fnameType, setFnameType] = useState('begin')
+    const [lnameType, setLnameType] = useState('begin')
+    const [fathNameType, setFathNameType] = useState('begin')
+
     return ( 
         <div className="tab__content">
             <div className="searchForm">
                 <div>
-                    <Select value={"begin"} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
-                        <MenuItem value={"begin"}>Начинается с</MenuItem>
-                        <MenuItem value={"have"}>Содержит</MenuItem>
-                        <MenuItem value={"ends"}>Заканчивается на</MenuItem>
+                    <Select value={fnameType} onChange={event => {
+                        console.log(event)
+                    }} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+                        <MenuItem value={"begin"} onClick={(event) => {
+                            setFnameType(event.target.dataset.value)
+                        }}>Начинается с</MenuItem>
+                        <MenuItem value={"have"} onClick={(event) => {
+                            setFnameType(event.target.dataset.value)
+                        }}>Содержит</MenuItem>
+                        <MenuItem value={"ends"} onClick={(event) => {
+                            setFnameType(event.target.dataset.value)
+                        }}>Заканчивается на</MenuItem>
                     </Select>
                     <div>
                         <label htmlFor="fname">Имя</label>
@@ -44,10 +58,16 @@ function TabContent_FIO(props) {
                     </div>
                 </div>
                 <div>
-                    <Select value={"begin"} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
-                        <MenuItem value={"begin"}>Начинается с</MenuItem>
-                        <MenuItem value={"have"}>Содержит</MenuItem>
-                        <MenuItem value={"ends"}>Заканчивается на</MenuItem>
+                    <Select value={lnameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+                        <MenuItem value={"begin"} onClick={(event) => {
+                            setLnameType(event.target.dataset.value)
+                        }}>Начинается с</MenuItem>
+                        <MenuItem value={"have"} onClick={(event) => {
+                            setLnameType(event.target.dataset.value)
+                        }}>Содержит</MenuItem>
+                        <MenuItem value={"ends"} onClick={(event) => {
+                            setLnameType(event.target.dataset.value)
+                        }}>Заканчивается на</MenuItem>
                     </Select>
                     <div>
                         <label htmlFor="lName">Фамилия</label>
@@ -55,10 +75,16 @@ function TabContent_FIO(props) {
                     </div>
                 </div>
                 <div>
-                <Select value={"begin"} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
-                    <MenuItem value={"begin"}>Начинается с</MenuItem>
-                    <MenuItem value={"have"}>Содержит</MenuItem>
-                    <MenuItem value={"ends"}>Заканчивается на</MenuItem>
+                <Select value={fathNameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+                    <MenuItem value={"begin"} onClick={(event) => {
+                        setFathNameType(event.target.dataset.value)
+                    }}>Начинается с</MenuItem>
+                    <MenuItem value={"have"} onClick={(event) => {
+                        setFathNameType(event.target.dataset.value)
+                    }}>Содержит</MenuItem>
+                    <MenuItem value={"ends"} onClick={(event) => {
+                        setFathNameType(event.target.dataset.value)
+                    }}>Заканчивается на</MenuItem>
                 </Select>
                     <div>
                         <label htmlFor="fathName">Отчество</label>
@@ -69,8 +95,11 @@ function TabContent_FIO(props) {
 
             <div className='dopInfa'>
 
-                <div onClick={() => setShowDopInfo((prev) => !prev)}>Дополнительные данные</div>
-                {showDopInfo ? <div>пфпфвп</div> : ""}
+                <div onClick={() => setShowDopInfo((prev) => !prev)}>
+                    <div>Дополнительные данные</div>
+                    <div>{showDopInfo ? "HideIcon" : "ShowIcon"}</div>
+                </div>
+                <DopInfoBlock show={showDopInfo}/>
             </div>
 
             <div style={{display: "flex", justifyContent: "flex-start", paddingLeft: "70%"}}>

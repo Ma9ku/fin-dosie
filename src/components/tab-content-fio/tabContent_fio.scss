@@ -67,9 +67,14 @@
 }
 
 .tab__content .dopInfa {
+    background-color: #060607;
+    border-radius: 4px;
+
+    width: 57%;
 
     margin-top: 30px;
     margin-left: 64px;
+    padding: 10px 10px 10px 0;
 
     color: #fff;
     font-family: 'Montserrat';
@@ -79,6 +84,11 @@
     line-height: 13px;
 
     > div:nth-child(1) {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
         margin-left: 10px;
         cursor: pointer;
     } 
