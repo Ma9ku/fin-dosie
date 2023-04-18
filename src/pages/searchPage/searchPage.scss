@@ -1,3 +1,11 @@
+body {
+    background-image: url(./../../images/bg-image.png) !important;
+    background: 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
+    
+}
+
 .searchPage {
     // border: 1px red solid;
 
@@ -99,6 +107,7 @@ $tab-wrap-border-radius: 2px;
             position: relative;
             top: 0;
             z-index: 100;
+            
         }
 
         & .tab__result:nth-of-type(#{$i}) {

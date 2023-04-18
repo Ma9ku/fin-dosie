@@ -53,7 +53,7 @@ function SearchedTable(props) {
           </TableCell>
           <TableCell sx={tdStyle} align="left">{row.first_name} {row.last_name} {row.patronymic}</TableCell>
           <TableCell sx={tdStyle} align="left">{row.iin}</TableCell>
-          <TableCell sx={tdStyle} align="left"><Link style={{textDecoration: 'none', color: 'white'}} className='goLink' to={'/profiler/person/'+ row.iin}>Перейти..</Link></TableCell>
+          <TableCell sx={tdStyle} align="left"><Link style={{textDecoration: 'none', color: 'white'}} className='goLink'  target='_blank' rel='noopener noreferrer' to={'/profiler/person/'+ row.iin}>Перейти..</Link></TableCell>
         </TableRow>
       ))
     }

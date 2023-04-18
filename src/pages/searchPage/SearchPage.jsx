@@ -19,7 +19,6 @@ const Search = (props) => {
 
     return (
         <>
-            <Navbar/>
             <div className='searchPage'>
                 <div className='searchtabs'>
                     <div className="tab-wrap">

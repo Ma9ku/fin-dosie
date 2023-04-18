@@ -10,6 +10,7 @@ import {
 import DosiePage from './pages/dosPage/DosiePage';
 import MainPage from './pages/mainPage/MainPage';
 import SearchPage from './pages/searchPage/SearchPage';
+import Navbar from './components/nav-bar/Navbar';
 // import TempSearch from './pages/tempSearch/tempSearch';
 
 import { createTheme, ThemeProvider } from '@mui/material';
@@ -41,21 +42,14 @@ function App() {
             }
           }
         }
-      },
-      MuiSelect: {
-        styleOverrides: {
-          select: {
-            ...{'root': {
-              backgroundColor: '#0D0F11'
-            }}
-          }
-        }
       }
     }
   })
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+      <Navbar/>
+
         <Router>
           <Routes>
             <Route path='/main' element={
