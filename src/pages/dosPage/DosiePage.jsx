@@ -69,15 +69,13 @@ const DosiePage = (props) => {
                 <Navbar/>
                 <div className='dosiePage'>
                     <div className="central-bar">
-                        {/* <SearchBar/> */}
                         <div className="frames">
                             <LeftTopFrame photo={base} data={leftTopFrameData}/>
-                            <RightTopFrame/>
+                            <RightTopFrame relatives={relatives}/>
                             <LeftBottomFrame/>
                             <RightBottomFrame/>
                         </div>
                     </div>
-                    
                 </div>
             </>
         );
@@ -87,12 +85,10 @@ const DosiePage = (props) => {
                 <Navbar/>
                 <div className='dosiePage'>
                     <div className="central-bar">
-                        {/* <SearchBar/> */}
                         <div className="frames">
                             Loading
-                        </div>
+                        </div>      
                     </div>
-                    
                 </div>
             </>
         );

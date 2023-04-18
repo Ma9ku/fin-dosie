@@ -17,35 +17,70 @@ import { createTheme, ThemeProvider } from '@mui/material';
 function App() {
   const theme = createTheme({
     palette: {
-      node: 'dark',
+      mode: 'dark',
     },
+    typography: {
+      fontFamily: 'Montserrat',
+      fontSize: 14
+    },
+    components: {
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            minHeight: 'max-content',
+            maxHeight: '34px',
+            backgroundColor: '#0D0F11'
+          },
+          focused: {
+            backgroundColor: '#0D0F11'
+          },
+          input: {
+            '&:-webkit-autofill': {
+              WebkitBoxShadow: '0 0 0 100px #0D0F11 inset'
+            
+            }
+          }
+        }
+      },
+      MuiSelect: {
+        styleOverrides: {
+          select: {
+            ...{'root': {
+              backgroundColor: '#0D0F11'
+            }}
+          }
+        }
+      }
+    }
   })
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path='/main' element={
-            <MainPage/>
-          }/>
-          <Route path='/' element={
-            <MainPage/>
-          }/>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Routes>
+            <Route path='/main' element={
+              <MainPage/>
+            }/>
+            <Route path='/' element={
+              <MainPage/>
+            }/>
 
-          <Route path='/profiler' element={
-            <SearchPage/>
-          }/>
+            <Route path='/profiler' element={
+              <SearchPage/>
+            }/>
 
-          <Route path='/profiler/person/:iin' element={
-            <DosiePage/>
-          }/>
+            <Route path='/profiler/person/:iin' element={
+              <DosiePage/>
+            }/>
 
-          <Route path='/login' element={
-            <div>Login route</div>
-          }/>
+            <Route path='/login' element={
+              <div>Login route</div>
+            }/>
 
 
-        </Routes>
-      </Router>
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </div>
   )
 }

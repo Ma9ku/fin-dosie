@@ -1,8 +1,7 @@
 package com.example.backend.modelsDossier;
 
-import com.example.backend.photo.modelsPhot.fl_relatives;
-import com.example.backend.photo.modelsPhot.photoDb;
-import com.example.backend.photo.modelsPhot.reg_address_fl;
+import com.example.backend.photo.modelsPhot.*;
+
 
 import java.util.List;
 
@@ -18,6 +17,18 @@ public class NodesFL {
     private List<adm> adms;
     private List<fl_relatives> fl_relatives;
     private List<reg_address_fl> regAddressFls;
+
+    private List<pdl> pdls;
+
+
+
+    public List<pdl> getPdls() {
+        return pdls;
+    }
+
+    public void setPdls(List<pdl> pdls) {
+        this.pdls = pdls;
+    }
 
     public List<reg_address_fl> getRegAddressFls() {
         return regAddressFls;

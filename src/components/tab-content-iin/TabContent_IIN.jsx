@@ -13,7 +13,7 @@ const inputStyle = {
     fontFamily: 'Montserrat', 
     fontStyle: "normal", 
     fontWeight: 500, 
-    fontSize: "13px", 
+    fontSize: "14px", 
     lineHeight: "16px",
     // width: '300px',
 }
@@ -41,7 +41,7 @@ function TabConent_IIN(props) {
                     display: 'block', 
                     marginLeft: 8, 
                     width: '40%', 
-                    marginBottom: '20px'  
+                    marginBottom: '20px',
                 }} fullWidth> 
                 <a className='fieldText'  style={{marginBottom: '5px', marginLeft: '10px'}}>ИИН</a>
                 <div style={{ 
@@ -52,8 +52,8 @@ function TabConent_IIN(props) {
                     <TextField sx={{ 
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
-                            borderRadius: "4px",
+                            // border: "1px solid #565656", 
+                            borderRadius: "4px"
                         }} 
                         id="outlined-basic" 
                         inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
@@ -88,7 +88,7 @@ function TabConent_IIN(props) {
                     <TextField sx={{
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
+                            // border: "1px solid #565656", 
                             borderRadius: "4px",
                         }} id="outlined-basic"
                         inputProps={{ style: inputStyle, 'aria-label': 'Without label' }} 
@@ -120,7 +120,7 @@ function TabConent_IIN(props) {
                     <TextField sx={{ 
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
+                            // border: "1px solid #565656", 
                             borderRadius: "4px" 
                         }} 
                         id="outlined-basic" 
@@ -153,7 +153,7 @@ function TabConent_IIN(props) {
                     <TextField sx={{ 
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
+                            // border: "1px solid #565656", 
                             borderRadius: "4px" 
                         }} 
                         id="outlined-basic" 
