@@ -13,12 +13,12 @@ function LeftTopFrame(props) {
     // const [first_name, setfirst_name] = useState('')
     // const [first_name, setfirst_name] = useState('')
     useEffect(() => {
-        console.log("lol", props)
-        setPhoto(props.photo)
-        setfirst_name(props.data[0].first_name)
-        setlast_name(props.data[0].last_name)
-        setpatronymic(props.data[0].patronymic)
-        setiin(props.data[0].iin)
+        // console.log("lol", props)
+        // setPhoto(props.photo)
+        // setfirst_name(props.data[0].first_name)
+        // setlast_name(props.data[0].last_name)
+        // setpatronymic(props.data[0].patronymic)
+        // setiin(props.data[0].iin)
     })
     // const [iin, setIIN] = useState("")
     //

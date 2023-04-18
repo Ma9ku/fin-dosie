@@ -63,7 +63,7 @@ const DosiePage = (props) => {
     //     setLeftTopFrameData(obj)
     // }
 
-    if (base != '') {
+    if (base == '') {
         return (  
             <>
                 <Navbar/>

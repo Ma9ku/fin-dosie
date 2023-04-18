@@ -67,7 +67,6 @@ function LeftBottomFrame() {
         <div className="left-bottom-section">
             <div className="other-line">
                 <div>
-                    <label htmlFor="born-city" style={{fontSize: '15px', fontWeight: '600', color: "#FFFFFF"}}>Родственники</label>
                     <TableContainer>
                         <Table aria-label="collapsible table" className="uitable">
                             <TableBody style={{borderBottom: 'hidden'}}>
@@ -103,9 +102,9 @@ function Row(props) {
           </TableCell>
         </TableRow>
         <TableRow style={{borderBottom: 'hidden'}}>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <TableCell sx={{padding: 1}} style={{ paddingBottom: 0, paddingTop: 0}} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1, marginLeft: '20px' }}>
+              <Box sx={{ margin: 0, marginLeft: '0' }}>
                 {
                     row.message == null 
                     ?
@@ -113,16 +112,17 @@ function Row(props) {
                             {
                                 row.name != "Транспорт"
                                 ?
-                                <TableHead>{
+                                <TableBody style={{padding: 0, borderBottom: 'hidden'}}>{
                                 Object.keys(row.dop_infa).map(key => {
                                     return (
-                                        <TableRow style={{borderBottom: 'hidden'}}>
-                                            <TableCell style={{ width: '30%', fontSize: '12px', color: "#6D6D6D" }}  align="left"><a>{row.dop_infa[key].name}</a></TableCell>
-                                            <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF" }} align="left"><a>{row.dop_infa[key].value}</a></TableCell>
+
+                                        <TableRow style={{borderBottom: 'hidden', width: "100%"}}>
+                                            <TableCell sx={{p: 0}} style={{ width: '30%', fontSize: '12px', color: "#6D6D6D"}}  align="left"><a>{row.dop_infa[key].name}</a></TableCell>
+                                            <TableCell style={{ width: '70%', fontSize: '12px', color: "#FFFFFF"}} align="left"><a>{row.dop_infa[key].value}</a></TableCell>
                                         </TableRow>
                                     )
                                 })
-                                }</TableHead>
+                                }</TableBody>
                                 :
                                 <>
                                 <TableHead>
