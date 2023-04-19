@@ -102,6 +102,18 @@ const Search = (props) => {
                         <input type="radio" id="tab0" name="tabGroup2" className="tab" style={{cursor: 'default'}}></input>
                         <label htmlFor="tab0" style={{cursor:"default"}}></label>
                         
+                        
+                        <input type="radio" id="tab0" name="tabGroup2" className="tab" style={{cursor: 'default'}}></input>
+                        <label htmlFor="tab0" style={{cursor:"default"}}></label>
+                        
+                        
+                        <input type="radio" id="tab0" name="tabGroup2" className="tab" style={{cursor: 'default'}}></input>
+                        <label htmlFor="tab0" style={{cursor:"default"}}></label>
+                        
+                        
+                        <input type="radio" id="tab0" name="tabGroup2" className="tab" style={{cursor: 'default'}}></input>
+                        <label htmlFor="tab0" style={{cursor:"default"}}></label>
+                        
                         <div className="tab__content">
                         </div>
 

@@ -4,6 +4,8 @@ import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import SearchedTable from '../../components/searchedTable/SearchedTable';
 
@@ -26,6 +28,7 @@ function TabConent_IIN(props) {
     const [iin, setIIN] = React.useState('');
     const [result, setResult] = React.useState(null);
     const [photo, setPhoto] = React.useState('')
+    const [loading, setLoading] = React.useState(false)
 
     const handleSelectPerson = (photo) => {
         setPhoto(photo)
@@ -36,11 +39,14 @@ function TabConent_IIN(props) {
         setIIN(event.target.value)
     }
     const searchIIN = async () => {
+        console.log(loading)
         const params = {iin: iin}
+        setLoading(true)
         console.log(params)
         axios.get(baseURL+'iin', {params: params}).then(res => {
             console.log(res.data)
             setResult(res.data)
+            setLoading(false)
         })
         setPhoto('')
     }
@@ -79,7 +85,8 @@ function TabConent_IIN(props) {
                                     width: 'fit-content', 
                                     marginLeft: 3 
                                 }} variant="contained"
-                                onClick={searchIIN}>
+                                onClick={() => {
+                                    searchIIN()}}>
                                 <span className='buttonSearch'>Запрос</span>
                             </Button>
                         </div>
@@ -192,7 +199,15 @@ function TabConent_IIN(props) {
 
             <div className='searchResultBlock'>
                 <p>Результат</p>
-                <SearchedTable result={result} selectPhoto={handleSelectPerson}/>
+                { loading ? (
+                        <Box sx={{ width: '100%' }}>
+                            <div style={{height: '50px'}}></div>
+                            <LinearProgress />
+                        </Box>
+                    ) : ( 
+                        
+                        <SearchedTable result={result} selectPhoto={handleSelectPerson} loading={loading}/>
+                )}
             </div>
         </div>
     );

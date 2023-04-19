@@ -127,12 +127,14 @@ function TransportRow(props) {
                                         exist ? row.map((car, index) => {
                                             return (
                                                 <>
-                                                <TableCell sx={{padding: 1}} style={{ fontSize: '14px', color: "#FFFFFF"}} align="left">{index+1}</TableCell>
-                                                <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.brand_model}</TableCell>
-                                                <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.series_reg_number}</TableCell>
-                                                <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.reg_number}</TableCell>
-                                                <TableCell sx={{padding: 1}} style={{ fontSize: '14px', color: "#FFFFFF" }} align="left">{car.date_certificate}</TableCell>
-                                                <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.end_date}</TableCell>
+                                                <TableRow className="uitableHead"  style={{borderBottom: 'hidden'}}>
+                                                    <TableCell sx={{padding: 1}} style={{ fontSize: '14px', color: "#FFFFFF"}} align="left">{index+1}</TableCell>
+                                                    <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.brand_model}</TableCell>
+                                                    <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.series_reg_number}</TableCell>
+                                                    <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.reg_number}</TableCell>
+                                                    <TableCell sx={{padding: 1}} style={{ fontSize: '14px', color: "#FFFFFF" }} align="left">{car.date_certificate}</TableCell>
+                                                    <TableCell sx={{padding: 1}} style={{  fontSize: '14px', color: "#FFFFFF" }} align="left">{car.end_date}</TableCell>
+                                                </TableRow>
                                                 </>
                                                 )
                                             }) 
@@ -141,6 +143,7 @@ function TransportRow(props) {
                                     }
                             </TableBody>
                     
+                                    <div style={{height: '10px'}}></div>
                     
                 </Box>
                 </Collapse>

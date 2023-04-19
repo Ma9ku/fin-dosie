@@ -22,6 +22,26 @@ public class NodesFL {
 
     private List<mv_iin_doc> mvIinDocs;
 
+    private List<com.example.backend.photo.modelsPhot.universities> universities;
+
+    private List<school> schools;
+
+    public List<school> getSchools() {
+        return schools;
+    }
+
+    public void setSchools(List<school> schools) {
+        this.schools = schools;
+    }
+
+    public List<com.example.backend.photo.modelsPhot.universities> getUniversities() {
+        return universities;
+    }
+
+    public void setUniversities(List<com.example.backend.photo.modelsPhot.universities> universities) {
+        this.universities = universities;
+    }
+
     public List<mv_iin_doc> getMvIinDocs() {
         return mvIinDocs;
     }

@@ -101,6 +101,7 @@ $tab-wrap-border-radius: 2px;
 
 .tab {
     display: none;
+    // height: 10px;
 
     @for $i from 1 through $max-tab-count {
         &:checked:nth-of-type(#{$i})~.tab__content:nth-of-type(#{$i}) {
@@ -151,9 +152,10 @@ $tab-wrap-border-radius: 2px;
         text-align: center;
         user-select: none;
         text-align: center;
-        height: 50px;
+        font-weight: 500;
+        height: 35px;
         box-sizing: border-box;
-        padding: 15px;
+        padding: 10px;
 
     }
 
@@ -172,8 +174,11 @@ $tab-wrap-border-radius: 2px;
     }
 }
 
+// .css-8atqhb {
+//     width: 90%;
+// }
 .searchPage .searchResultBlock {
-    width: 80%;
+    width: 90%;
 
 
     margin-left: 64px;

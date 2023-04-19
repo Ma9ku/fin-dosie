@@ -3,6 +3,8 @@ import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -42,6 +44,7 @@ const inputStyle = {
 
 function TabContent_FIO(props) {
     const [showDopInfo, setShowDopInfo] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const [fnameType, setFnameType] = useState('begin')
     const [lnameType, setLnameType] = useState('begin')
@@ -59,6 +62,7 @@ function TabContent_FIO(props) {
     }
 
     const searchFIO = async () => {
+        setLoading(true)
         let resFname = ''
         let resLname = ''
         let resFathName = ''
@@ -88,10 +92,11 @@ function TabContent_FIO(props) {
         axios.get(baseURL+'fio', {params: params}).then(res => {
             console.log(res.data)
             setResult(res.data)
+            setLoading(false)
         })
         setPhoto('')
     }
-
+    
     return ( 
         <div className="tab__content">
             <div className="searchForm">
@@ -110,7 +115,7 @@ function TabContent_FIO(props) {
                         }}>Заканчивается на</MenuItem>
                     </Select>
                     <div>
-                        <label htmlFor="fname">Имя</label>
+                        <a className='fieldText' style={{marginLeft: '10px'}}>Имя</a>
                         {/* <input type="text" name="fname" id="fname" /> */}
                         <TextField sx={{ 
                                     height: '34px', 
@@ -137,7 +142,7 @@ function TabContent_FIO(props) {
                         }}>Заканчивается на</MenuItem>
                     </Select>
                     <div>
-                        <label htmlFor="lName">Фамилия</label>
+                        <a className='fieldText' style={{marginLeft: '10px'}}>Фамилия</a>
                         {/* <input type="text" name="lName" id="lName" /> */}
                         <TextField sx={{ 
                                     height: '34px', 
@@ -164,7 +169,7 @@ function TabContent_FIO(props) {
                     }}>Заканчивается на</MenuItem>
                 </Select>
                     <div>
-                        <label htmlFor="fathName">Отчество</label>
+                        <a className='fieldText' style={{marginLeft: '10px'}}>Отчество</a>
                         {/* <input type="text" name="fathName" id="fathName" /> */}
                         <TextField sx={{ 
                                     height: '34px', 
@@ -203,7 +208,15 @@ function TabContent_FIO(props) {
 
             <div className='searchResultBlock'>
                 <p>Результат</p>
-                <SearchedTable  result={result} selectPhoto={handleSelectPerson}/>
+                { loading? (
+                        <Box sx={{ width: '100%' }}>
+                            <div style={{height: '50px'}}></div>
+                            <LinearProgress />
+                        </Box>
+                    ) : ( 
+                        
+                        <SearchedTable result={result} selectPhoto={handleSelectPerson}/>
+                )}
             </div>
         </div>
     );

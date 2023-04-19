@@ -8,6 +8,7 @@ import com.example.backend.photo.repositoryPhot.fl_relativesRepository;
 import com.example.backend.photo.repositoryPhot.mv_iin_docRepo;
 import com.example.backend.photo.repositoryPhot.pdlReposotory;
 import com.example.backend.photo.repositoryPhot.reg_address_fl_Repo;
+import com.example.backend.photo.repositoryPhot.*;
 import com.example.backend.repositoryDossier.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +47,10 @@ public class MyService {
     pdlReposotory pdlReposotory;
     @Autowired
     mv_iin_docRepo mvIinDocRepo;
+    @Autowired
+    universitiesRepo uniRepo;
+    @Autowired
+    schoolRepo schoolRepo;
 
     public List<searchResultModelFL> getByIIN_photo(String IIN) {
         List<mv_fl> fls = mv_FlRepo.getUsersByLike(IIN);
@@ -149,6 +154,8 @@ public class MyService {
         myNode.setFl_relatives(relatives);
         myNode.setPdls(pdlReposotory.getByIIN(IIN));
         myNode.setMvIinDocs(mvIinDocRepo.getByIIN(IIN));
+        myNode.setUniversities(uniRepo.getByIIN(IIN));
+        myNode.setSchools(schoolRepo.getByIIN(IIN));
         return myNode;
     }
  public NodesUL getNodeUL(String BIN){
