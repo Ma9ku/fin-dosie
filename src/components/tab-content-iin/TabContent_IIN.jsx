@@ -51,7 +51,7 @@ function TabConent_IIN(props) {
         setPhoto('')
     }
     return ( 
-        <div className="tab__content">
+        <div className="tab__content tab_iin">
             <div className='displayFlexTwoColumns'>
                 <div>
                     <FormControl sx={{

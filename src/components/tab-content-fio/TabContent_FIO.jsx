@@ -23,7 +23,7 @@ const selectStyle = {
     color: '#fff',
 
     outline: "none",
-    border: '1px solid #565656',
+    // border: '1px solid #565656',
     borderRadius: '2px',
     
     display: "flex",
@@ -98,92 +98,98 @@ function TabContent_FIO(props) {
     }
     
     return ( 
-        <div className="tab__content">
-            <div className="searchForm">
-                <div>
-                    <Select value={fnameType} onChange={event => {
-                        console.log(event)
-                    }} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+        <div className="tab__content tab_fio">
+            <div className="displayFlexTwoColumns">
+                <div className="searchForm">
+                    <div>
+                        <Select value={fnameType} onChange={event => {
+                            console.log(event)
+                        }} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+                            <MenuItem value={"begin"} onClick={(event) => {
+                                setFnameType(event.target.dataset.value)
+                            }}>Начинается с</MenuItem>
+                            <MenuItem value={"have"} onClick={(event) => {
+                                setFnameType(event.target.dataset.value)
+                            }}>Содержит</MenuItem>
+                            <MenuItem value={"ends"} onClick={(event) => {
+                                setFnameType(event.target.dataset.value)
+                            }}>Заканчивается на</MenuItem>
+                        </Select>
+                        <div>
+                            <label htmlFor="fname">Имя</label>
+                            {/* <input type="text" name="fname" id="fname" /> */}
+                            <TextField sx={{ 
+                                        height: '34px', 
+                                        flex: 1, 
+                                        borderRadius: "4px"
+                                    }} 
+                                    id="outlined-basic" 
+                                    inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                    value={fname}
+                                    onChange={(e) => setFname(e.target.value)}
+                                    variant="outlined" />
+                        </div>
+                    </div>
+                    <div>
+                        <Select value={lnameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
+                            <MenuItem value={"begin"} onClick={(event) => {
+                                setLnameType(event.target.dataset.value)
+                            }}>Начинается с</MenuItem>
+                            <MenuItem value={"have"} onClick={(event) => {
+                                setLnameType(event.target.dataset.value)
+                            }}>Содержит</MenuItem>
+                            <MenuItem value={"ends"} onClick={(event) => {
+                                setLnameType(event.target.dataset.value)
+                            }}>Заканчивается на</MenuItem>
+                        </Select>
+                        <div>
+                            <label htmlFor="lName">Фамилия</label>
+                            {/* <input type="text" name="lName" id="lName" /> */}
+                            <TextField sx={{ 
+                                        height: '34px', 
+                                        flex: 1, 
+                                        borderRadius: "4px"
+                                    }} 
+                                    id="outlined-basic" 
+                                    inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                    value={lname}
+                                    onChange={(e) => setLname(e.target.value)}
+                                    variant="outlined" />
+                        </div>
+                    </div>
+                    <div>
+                    <Select value={fathNameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
                         <MenuItem value={"begin"} onClick={(event) => {
-                            setFnameType(event.target.dataset.value)
+                            setFathNameType(event.target.dataset.value)
                         }}>Начинается с</MenuItem>
                         <MenuItem value={"have"} onClick={(event) => {
-                            setFnameType(event.target.dataset.value)
+                            setFathNameType(event.target.dataset.value)
                         }}>Содержит</MenuItem>
                         <MenuItem value={"ends"} onClick={(event) => {
-                            setFnameType(event.target.dataset.value)
+                            setFathNameType(event.target.dataset.value)
                         }}>Заканчивается на</MenuItem>
                     </Select>
-                    <div>
-                        <a className='fieldText' style={{marginLeft: '10px'}}>Имя</a>
-                        {/* <input type="text" name="fname" id="fname" /> */}
-                        <TextField sx={{ 
-                                    height: '34px', 
-                                    flex: 1, 
-                                    borderRadius: "4px"
-                                }} 
-                                id="outlined-basic" 
-                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
-                                value={fname}
-                                onChange={(e) => setFname(e.target.value)}
-                                variant="outlined" />
+                        <div>
+                            <label htmlFor="fathName">Отчество</label>
+                            {/* <input type="text" name="fathName" id="fathName" /> */}
+                            <TextField sx={{ 
+                                        height: '34px', 
+                                        flex: 1, 
+                                        borderRadius: "4px"
+                                    }} 
+                                    id="outlined-basic" 
+                                    inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                    value={fathName}
+                                    onChange={(e) => setFathName(e.target.value)}
+                                    variant="outlined" />
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <Select value={lnameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
-                        <MenuItem value={"begin"} onClick={(event) => {
-                            setLnameType(event.target.dataset.value)
-                        }}>Начинается с</MenuItem>
-                        <MenuItem value={"have"} onClick={(event) => {
-                            setLnameType(event.target.dataset.value)
-                        }}>Содержит</MenuItem>
-                        <MenuItem value={"ends"} onClick={(event) => {
-                            setLnameType(event.target.dataset.value)
-                        }}>Заканчивается на</MenuItem>
-                    </Select>
-                    <div>
-                        <a className='fieldText' style={{marginLeft: '10px'}}>Фамилия</a>
-                        {/* <input type="text" name="lName" id="lName" /> */}
-                        <TextField sx={{ 
-                                    height: '34px', 
-                                    flex: 1, 
-                                    borderRadius: "4px"
-                                }} 
-                                id="outlined-basic" 
-                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
-                                value={lname}
-                                onChange={(e) => setLname(e.target.value)}
-                                variant="outlined" />
-                    </div>
-                </div>
-                <div>
-                <Select value={fathNameType} inputProps={{ 'aria-label': 'Without label' }} style={selectStyle}>
-                    <MenuItem value={"begin"} onClick={(event) => {
-                        setFathNameType(event.target.dataset.value)
-                    }}>Начинается с</MenuItem>
-                    <MenuItem value={"have"} onClick={(event) => {
-                        setFathNameType(event.target.dataset.value)
-                    }}>Содержит</MenuItem>
-                    <MenuItem value={"ends"} onClick={(event) => {
-                        setFathNameType(event.target.dataset.value)
-                    }}>Заканчивается на</MenuItem>
-                </Select>
-                    <div>
-                        <a className='fieldText' style={{marginLeft: '10px'}}>Отчество</a>
-                        {/* <input type="text" name="fathName" id="fathName" /> */}
-                        <TextField sx={{ 
-                                    height: '34px', 
-                                    flex: 1, 
-                                    borderRadius: "4px"
-                                }} 
-                                id="outlined-basic" 
-                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
-                                value={fathName}
-                                onChange={(e) => setFathName(e.target.value)}
-                                variant="outlined" />
-                    </div>
+                    <img></img>
                 </div>
             </div>
+            
 
             <div className='dopInfa'>
 

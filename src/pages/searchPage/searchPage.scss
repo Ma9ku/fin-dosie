@@ -53,7 +53,7 @@ body {
     color: #FFFFFF;
 }
 
-$max-tab-count: 4;
+$max-tab-count: 5;
 $tab-wrap-border-radius: 2px;
 
 .tab-wrap {
@@ -71,7 +71,7 @@ $tab-wrap-border-radius: 2px;
 
 .tab__content {
     background: #0D0F11 !important;
-    height: 70vh;
+    height: 65vh;
     overflow-y: scroll !important; 
     &::-webkit-scrollbar {
         display: none;
@@ -79,17 +79,18 @@ $tab-wrap-border-radius: 2px;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
 
+    padding-top: 50px !important;
 }
 
 @media only screen and (max-height: 700px) {
     .tab__content {
-        height: 60vh;
+        height: 55vh;
     }
 }
 
 @media only screen and (max-height: 500px) {
     .tab__content {
-        height: 50vh;
+        height: 45vh;
     }
 }
 

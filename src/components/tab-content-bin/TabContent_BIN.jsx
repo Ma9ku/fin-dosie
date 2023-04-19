@@ -36,7 +36,6 @@ function TabConent_BIN(props) {
                     <TextField sx={{ 
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
                             borderRadius: "4px",
                         }} 
                         id="outlined-basic" 
@@ -69,7 +68,6 @@ function TabConent_BIN(props) {
                     <TextField sx={{
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
                             borderRadius: "4px",
                         }} id="outlined-basic"
                         inputProps={{ style: inputStyle, 'aria-label': 'Without label' }} 
@@ -101,7 +99,6 @@ function TabConent_BIN(props) {
                     <TextField sx={{ 
                             height: '34px', 
                             flex: 1, 
-                            border: "1px solid #565656", 
                             borderRadius: "4px" 
                         }} 
                         id="outlined-basic" 
