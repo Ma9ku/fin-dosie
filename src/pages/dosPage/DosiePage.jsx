@@ -62,7 +62,11 @@ const DosiePage = (props) => {
         return (  
             <>
                 <div className='load'>
-                            <span class="loader"></span>
+                    <div className="loader">
+                        <div className="inner one"></div>
+                        <div className="inner two"></div>
+                        <div className="inner three"></div>
+                    </div>
                 </div>
                 {/* <div className='dosiePage'>
                     <div className="central-bar">

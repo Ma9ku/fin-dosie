@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
@@ -11,7 +11,7 @@ import SearchedTable from '../../components/searchedTable/SearchedTable';
 import './tabContent_fio.scss'
 
 import DopInfoBlock from '../dop-info-block/DopInfoBlock';
-
+const baseURL = 'http://localhost:9095/'
 const selectStyle = {
     width: '200px',
     height: '35px',
@@ -28,12 +28,69 @@ const selectStyle = {
     flexDirection: "row",
 }
 
+
+const inputStyle = {
+    height: "3px", 
+    color: "#fff", 
+    fontFamily: 'Montserrat', 
+    fontStyle: "normal", 
+    fontWeight: 500, 
+    fontSize: "14px", 
+    lineHeight: "16px",
+    // width: '300px',
+}
+
 function TabContent_FIO(props) {
     const [showDopInfo, setShowDopInfo] = useState(false)
 
     const [fnameType, setFnameType] = useState('begin')
     const [lnameType, setLnameType] = useState('begin')
     const [fathNameType, setFathNameType] = useState('begin')
+
+    const [fname, setFname] = useState('')
+    const [fathName, setFathName] = useState('')
+    const [lname, setLname] = useState('')
+
+    const [result, setResult] = React.useState(null);
+    const [photo, setPhoto] = React.useState('')
+
+    const handleSelectPerson = (photo) => {
+        setPhoto(photo)
+    }
+
+    const searchFIO = async () => {
+        let resFname = ''
+        let resLname = ''
+        let resFathName = ''
+        if (fnameType == 'begin') {
+            resFname = fname.toUpperCase() + '$'
+        } else if (fnameType == 'have') {
+            resFname = '$' + fname.toUpperCase() + '$'
+        } else {
+            resFname = '$' + fname.toUpperCase()
+        }
+        if (lnameType == 'begin') {
+            resLname = lname.toUpperCase() + '$'
+        } else if (lnameType == 'have') {
+            resLname = '$' + lname.toUpperCase() + '$'
+        } else {
+            resLname = '$' + lname.toUpperCase()
+        }
+        if (fathNameType == 'begin') {
+            resFathName = fathName.toUpperCase() + '$'
+        } else if (fathNameType == 'have') {
+            resFathName = '$' + fathName.toUpperCase() + '$'
+        } else {
+            resFathName = '$' + fathName.toUpperCase()
+        }
+        const params = {i: resFname, o: resFathName, f: resLname}
+        console.log(params)
+        axios.get(baseURL+'fio', {params: params}).then(res => {
+            console.log(res.data)
+            setResult(res.data)
+        })
+        setPhoto('')
+    }
 
     return ( 
         <div className="tab__content">
@@ -54,7 +111,17 @@ function TabContent_FIO(props) {
                     </Select>
                     <div>
                         <label htmlFor="fname">Имя</label>
-                        <input type="text" name="fname" id="fname" />
+                        {/* <input type="text" name="fname" id="fname" /> */}
+                        <TextField sx={{ 
+                                    height: '34px', 
+                                    flex: 1, 
+                                    borderRadius: "4px"
+                                }} 
+                                id="outlined-basic" 
+                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                value={fname}
+                                onChange={(e) => setFname(e.target.value)}
+                                variant="outlined" />
                     </div>
                 </div>
                 <div>
@@ -71,7 +138,17 @@ function TabContent_FIO(props) {
                     </Select>
                     <div>
                         <label htmlFor="lName">Фамилия</label>
-                        <input type="text" name="lName" id="lName" />
+                        {/* <input type="text" name="lName" id="lName" /> */}
+                        <TextField sx={{ 
+                                    height: '34px', 
+                                    flex: 1, 
+                                    borderRadius: "4px"
+                                }} 
+                                id="outlined-basic" 
+                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                value={lname}
+                                onChange={(e) => setLname(e.target.value)}
+                                variant="outlined" />
                     </div>
                 </div>
                 <div>
@@ -88,7 +165,17 @@ function TabContent_FIO(props) {
                 </Select>
                     <div>
                         <label htmlFor="fathName">Отчество</label>
-                        <input type="text" name="fathName" id="fathName" />
+                        {/* <input type="text" name="fathName" id="fathName" /> */}
+                        <TextField sx={{ 
+                                    height: '34px', 
+                                    flex: 1, 
+                                    borderRadius: "4px"
+                                }} 
+                                id="outlined-basic" 
+                                inputProps={{ style: inputStyle,'aria-label': 'Without label' }} 
+                                value={fathName}
+                                onChange={(e) => setFathName(e.target.value)}
+                                variant="outlined" />
                     </div>
                 </div>
             </div>
@@ -109,14 +196,14 @@ function TabContent_FIO(props) {
                         color: 'white', 
                         width: 'fit-content', 
                         marginLeft: 3 
-                    }} variant="contained">
+                    }} variant="contained" onClick={searchFIO}>
                     <span className='buttonSearch'>Запрос</span>
                 </Button>
             </div>
 
             <div className='searchResultBlock'>
                 <p>Результат</p>
-                <SearchedTable/>
+                <SearchedTable  result={result} selectPhoto={handleSelectPerson}/>
             </div>
         </div>
     );
