@@ -19,7 +19,7 @@ body {
   min-height: 100vh;
 
   background-color: #0D0F11;
-  background-image: url(./images/bg-image.png);
+  /* background-image: url(./images/bg-image.png); */
   background-size: 100%;
   background-position: top left;
   background-repeat: no-repeat;

@@ -20,7 +20,15 @@ public class NodesFL {
 
     private List<pdl> pdls;
 
+    private List<mv_iin_doc> mvIinDocs;
 
+    public List<mv_iin_doc> getMvIinDocs() {
+        return mvIinDocs;
+    }
+
+    public void setMvIinDocs(List<mv_iin_doc> mvIinDocs) {
+        this.mvIinDocs = mvIinDocs;
+    }
 
     public List<pdl> getPdls() {
         return pdls;

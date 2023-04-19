@@ -5,6 +5,7 @@ import com.example.backend.photo.modelsPhot.fl_relatives;
 import com.example.backend.photo.modelsPhot.photoDb;
 import com.example.backend.photo.modelsPhot.reg_address_fl;
 import com.example.backend.photo.repositoryPhot.fl_relativesRepository;
+import com.example.backend.photo.repositoryPhot.mv_iin_docRepo;
 import com.example.backend.photo.repositoryPhot.pdlReposotory;
 import com.example.backend.photo.repositoryPhot.reg_address_fl_Repo;
 import com.example.backend.repositoryDossier.*;
@@ -43,6 +44,8 @@ public class MyService {
     reg_address_fl_Repo regAddressFlRepo;
     @Autowired
     pdlReposotory pdlReposotory;
+    @Autowired
+    mv_iin_docRepo mvIinDocRepo;
     private NodesFL tryAddPhoto(NodesFL node, String IIN) {
         try {
             List<photoDb> photos = new ArrayList<>();
@@ -102,6 +105,7 @@ public class MyService {
         myNode.setEquipment(myEquipment);
         myNode.setFl_relatives(relatives);
         myNode.setPdls(pdlReposotory.getByIIN(IIN));
+        myNode.setMvIinDocs(mvIinDocRepo.getByIIN(IIN));
         return myNode;
     }
  public NodesUL getNodeUL(String BIN){

@@ -12,7 +12,6 @@ const MainPage = (props) => {
     const navigate = useNavigate();
     return (
         <>
-            <Navbar/>
             <div className='container'>
                 <div className='logodiv'></div>
                 <img src={logo} className='logo'></img>
