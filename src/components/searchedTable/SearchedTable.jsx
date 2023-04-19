@@ -74,7 +74,7 @@ function SearchedTable(props) {
                 <TableCell sx={thStyle} style={{width: '5%', fontSize: '12px', fontWeight: 500, color: "#6D6D6D" }}>№</TableCell>
                 <TableCell sx={thStyle} style={{width: '60%', fontSize: '12px', fontWeight: 500, color: "#6D6D6D"  }}align="left"><span style={{}}>ФИО</span></TableCell>
                 <TableCell sx={thStyle} style={{width: '15%', fontSize: '12px', fontWeight: 500, color: "#6D6D6D" }} align="left"><span>ИИН</span></TableCell>
-                <TableCell sx={thStyle} style={{width: '10%', fontSize: '12px', fontWeight: 500, color: "#6D6D6D" }} align="left"><span>Действие</span></TableCell>
+                <TableCell sx={thStyle} style={{width: '20%', fontSize: '12px', fontWeight: 500, color: "#6D6D6D" }} align="left"><span>Действие</span></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
