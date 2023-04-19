@@ -50,7 +50,7 @@ function TabConent_IIN(props) {
                 <div>
                     <FormControl sx={{
                             marginLeft: 8, 
-                            width: '90%', 
+                            width: '70%', 
                             marginBottom: '20px',
                         }} fullWidth> 
                         <a className='fieldText' style={{
@@ -86,7 +86,7 @@ function TabConent_IIN(props) {
                     </FormControl>
                     <FormControl sx={{ 
                             marginLeft: 8, 
-                            width: '90%', 
+                            width: '70%', 
                             marginBottom: '20px' 
                         }} fullWidth>
                         <a className='fieldText' style={{
@@ -118,7 +118,7 @@ function TabConent_IIN(props) {
                     </FormControl>
                     <FormControl sx={{ 
                             marginLeft: 8, 
-                            width: '90%', 
+                            width: '70%', 
                             marginBottom: '20px' 
                         }} fullWidth>
                         <a className='fieldText' style={{
@@ -151,7 +151,7 @@ function TabConent_IIN(props) {
                     </FormControl>
                     <FormControl sx={{
                             marginLeft: 8, 
-                            width: '90%', 
+                            width: '70%', 
                             marginBottom: '20px' 
                         }} fullWidth>
                         <a className='fieldText' style={{

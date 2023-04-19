@@ -17,25 +17,79 @@ const Search = (props) => {
         setValue(newValue);
     };
 
+    const [iinTab, setIINTab] = useState(true)
+    const [fioTab, setFIOTab] = useState(false)
+    const [binTab, setBINTab] = useState(false)
+    const [ulTab, setUlTab] = useState(false)
+
     return (
         <>
             <div className='searchPage'>
                 <div className='searchtabs'>
                     <div className="tab-wrap">
                         <input type="radio" id="tab0" name="tabGroup2" className="tab" disabled style={{cursor: 'default'}}/>
-                        <label htmlFor="tab0" style={{cursor:"default"}}></label>
+                        <label htmlFor="tab0" style={{cursor:"default", background: "#0d0f1100"}} sx={{}}></label>
 
-                        <input type="radio" id="tab4" name="tabGroup2" className="tab" defaultChecked/>
-                        <label htmlFor="tab4">ИИН</label>
+                        <input type="radio" id="tab4" name="tabGroup2" className="tab" defaultChecked
+                            onClick={() => {
+                                setIINTab(true)
+                                setFIOTab(false)
+                                setBINTab(false)
+                                setUlTab(false)
+                            }}/>
+                        <label htmlFor="tab4" 
+                            style={{
+                                backgroundColor: iinTab?"#0D0F11":"#171B1F", 
+                                color: iinTab?"#FFFFFF":"#7B7B7B",
+                                borderTop: "1px #565656 solid",
+                                borderLeft: "1px #565656 solid",
+                                borderRight: !iinTab? (!fioTab ? "1px #565656 solid" : "none") : "1px #565656 solid", 
+                            }}>ИИН</label>
 
-                        <input type="radio" id="tab5" name="tabGroup2" className="tab"></input>
-                        <label htmlFor="tab5">ФИО</label>
+                        <input type="radio" id="tab5" name="tabGroup2" className="tab"
+                            onClick={() => {
+                                setIINTab(false)
+                                setFIOTab(true)
+                                setBINTab(false)
+                                setUlTab(false)
+                            }}/>
+                        <label htmlFor="tab5" 
+                            style={{
+                                backgroundColor: fioTab?"#0D0F11":"#171B1F", 
+                                color: fioTab?"#FFFFFF":"#7B7B7B",
+                                borderTop: "1px #565656 solid",
+                                borderRight: !fioTab? (!binTab ? "1px #565656 solid" : "none") : "1px #565656 solid"
+                            }}>ФИО</label>
 
-                        <input type="radio" id="tab6" name="tabGroup2" className="tab"></input>
-                        <label htmlFor="tab6">БИН</label>
+                        <input type="radio" id="tab6" name="tabGroup2" className="tab"
+                            onClick={() => {
+                                setIINTab(false)
+                                setFIOTab(false)
+                                setBINTab(true)
+                                setUlTab(false)
+                            }}/>
+                        <label htmlFor="tab6" 
+                            style={{
+                                backgroundColor: binTab?"#0D0F11":"#171B1F", 
+                                color: binTab?"#FFFFFF":"#7B7B7B",
+                                borderTop: "1px #565656 solid",
+                                borderRight: !binTab? (!ulTab ? "1px #565656 solid" : "none") : "1px #565656 solid"
+                            }}>БИН</label>
 
-                        <input type="radio" id="tab7" name="tabGroup2" className="tab"></input>
-                        <label htmlFor="tab7">Наименование ЮЛ</label>
+                        <input type="radio" id="tab7" name="tabGroup2" className="tab"
+                            onClick={() => {
+                                setIINTab(false)
+                                setFIOTab(false)
+                                setBINTab(false)
+                                setUlTab(true)
+                            }}/>
+                        <label htmlFor="tab7" 
+                            style={{
+                                backgroundColor: ulTab?"#0D0F11":"#171B1F", 
+                                color: ulTab?"#FFFFFF":"#7B7B7B",
+                                borderTop: "1px #565656 solid",
+                                borderRight: "1px #565656 solid",
+                            }}>Наименование ЮЛ</label>
                         
                         <input type="radio" id="tab0" name="tabGroup2" className="tab" style={{cursor: 'default'}}></input>
                         <label htmlFor="tab0" style={{cursor:"default"}}></label>
