@@ -56,13 +56,13 @@ $tab-wrap-border-radius: 2px;
     display: flex;
     flex-wrap: wrap;
 
-    background: #0D0F11;
     
     border-radius: $tab-wrap-border-radius;
     list-style: none;
 }
 
 .tab__content {
+    background: #0D0F11 !important;
     height: 70vh;
     overflow-y: scroll !important; 
     &::-webkit-scrollbar {
