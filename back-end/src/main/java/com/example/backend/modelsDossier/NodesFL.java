@@ -21,6 +21,15 @@ public class NodesFL {
     private List<pdl> pdls;
 
     private List<mv_iin_doc> mvIinDocs;
+    private List<criminals> criminals;
+
+    public List<com.example.backend.photo.modelsPhot.criminals> getCriminals() {
+        return criminals;
+    }
+
+    public void setCriminals(List<com.example.backend.photo.modelsPhot.criminals> criminals) {
+        this.criminals = criminals;
+    }
 
     public List<mv_iin_doc> getMvIinDocs() {
         return mvIinDocs;
