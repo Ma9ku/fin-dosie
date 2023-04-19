@@ -3,6 +3,7 @@ package com.example.backend.controller;
 import com.example.backend.modelsDossier.NodesFL;
 import com.example.backend.modelsDossier.NodesUL;
 import com.example.backend.modelsDossier.mv_fl;
+import com.example.backend.modelsDossier.searchResultModelFL;
 import com.example.backend.photo.modelsPhot.photoDb;
 import com.example.backend.photo.repositoryPhot.newPhotoRepo;
 import com.example.backend.repositoryDossier.esf_all2Repo;
@@ -51,7 +52,12 @@ public class DoseirController {
     }
 
     @GetMapping("/iin")
-    public List<mv_fl> getByIIN(@RequestParam String iin) {
-        return myService.searchByIIN(iin);
+    public List<searchResultModelFL> getByIIN(@RequestParam String iin) {
+        return myService.getByIIN_photo(iin);
+    }
+
+    @GetMapping("/fio")
+    public List<searchResultModelFL> findByFIO(@RequestParam String i, @RequestParam String o, @RequestParam String f) {
+        return myService.getByFIO_photo(i.replace('$', '%'), o.replace('$', '%'), f.replace('$', '%'));
     }
 }

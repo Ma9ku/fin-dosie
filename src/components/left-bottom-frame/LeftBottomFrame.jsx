@@ -137,7 +137,7 @@ function TransportRow(props) {
                                                 )
                                             }) 
                                             : 
-                                            <TableCell  className="zeroResult" colSpan={4} style={{ borderBottom: 'hidden'}}><a style={{marginLeft: '55%'}}>Нет данных</a></TableCell>
+                                            <TableCell  className="zeroResult" colSpan={6} align='center' style={{ borderBottom: 'hidden'}}><a >Нет данных</a></TableCell>
                                     }
                             </TableBody>
                     

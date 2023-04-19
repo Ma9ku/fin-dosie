@@ -46,6 +46,46 @@ public class MyService {
     pdlReposotory pdlReposotory;
     @Autowired
     mv_iin_docRepo mvIinDocRepo;
+
+    public List<searchResultModelFL> getByIIN_photo(String IIN) {
+        List<mv_fl> fls = mv_FlRepo.getUsersByLike(IIN);
+
+        List<searchResultModelFL> result = findWithPhoto(fls);
+        return result;
+    }
+
+    public List<searchResultModelFL> getByFIO_photo(String i, String o, String f) {
+        List<mv_fl> fls = mv_FlRepo.getUsersByFIO(i, o, f);
+
+        List<searchResultModelFL> result = findWithPhoto(fls);
+        return result;
+    }
+
+    private List<searchResultModelFL> findWithPhoto(List<mv_fl> fls) {
+        List<searchResultModelFL> result = new ArrayList<>();
+        for (mv_fl  fl: fls) {
+            searchResultModelFL person = new searchResultModelFL();
+            person.setFirst_name(fl.getFirst_name());
+            person.setLast_name(fl.getLast_name());
+            person.setPatronymic(fl.getPatronymic());
+            person.setIin(fl.getIin());
+            tryAddPhoto(person, fl.getIin());
+
+            result.add(person);
+        }
+        return result;
+    }
+
+    private searchResultModelFL tryAddPhoto(searchResultModelFL fl, String IIN) {
+        try {
+            photoDb photo = newPhotoService.getLastPhoto(IIN);
+            fl.setPhoto(photo.getPhoto());
+            return fl;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return fl;
+    }
     private NodesFL tryAddPhoto(NodesFL node, String IIN) {
         try {
             List<photoDb> photos = new ArrayList<>();
@@ -76,6 +116,9 @@ public class MyService {
         return properties;
     }
 
+    public List<mv_fl> findByFIO(String i, String o, String f) {
+        return mv_FlRepo.getUsersByFIO(i, o, f);
+    }
     public List<mv_fl> searchByIIN(String IIN) {
         return mv_FlRepo.getUsersByLike(IIN);
     }

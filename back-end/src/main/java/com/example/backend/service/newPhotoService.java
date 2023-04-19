@@ -18,4 +18,9 @@ public class newPhotoService {
 
         return all;
     }
+
+    public photoDb getLastPhoto(String iin) {
+        photoDb res = newPhotoRepo.findLastPhoto(iin);
+        return res;
+    }
 }

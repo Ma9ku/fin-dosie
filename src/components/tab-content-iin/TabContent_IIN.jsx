@@ -25,6 +25,12 @@ const baseURL = 'http://localhost:9095/'
 function TabConent_IIN(props) {
     const [iin, setIIN] = React.useState('');
     const [result, setResult] = React.useState(null);
+    const [photo, setPhoto] = React.useState('')
+
+    const handleSelectPerson = (photo) => {
+        setPhoto(photo)
+        console.log(photo)
+    }
 
     const handleIIN = (event) => {
         setIIN(event.target.value)
@@ -36,9 +42,10 @@ function TabConent_IIN(props) {
             console.log(res.data)
             setResult(res.data)
         })
+        setPhoto('')
     }
     return ( 
-        <div className="tab__content">
+        <div className="tab__content tab_iin">
             <div className='displayFlexTwoColumns'>
                 <div>
                     <FormControl sx={{
@@ -179,13 +186,13 @@ function TabConent_IIN(props) {
                     </FormControl>
                 </div>
                 <div>
-                    <img src="" alt="" />
+                    <img src={'data:image/jpeg;base64,' +  photo} alt=''></img>
                 </div>
             </div>
 
             <div className='searchResultBlock'>
                 <p>Результат</p>
-                <SearchedTable result={result}/>
+                <SearchedTable result={result} selectPhoto={handleSelectPerson}/>
             </div>
         </div>
     );

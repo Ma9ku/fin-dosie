@@ -8,7 +8,8 @@ import Button from '@mui/material/Button';
 import Navbar from '../../components/nav-bar/Navbar';
 import TabContent_IIN from '../../components/tab-content-iin/TabContent_IIN';
 import TabContent_FIO from '../../components/tab-content-fio/TabContent_FIO';
-import TabConent_BIN from '../../components/tab-content-bin/TabContent_BIN';
+import TabContent_BIN from '../../components/tab-content-bin/TabContent_BIN';
+import TabContent_UL from '../../components/tab-content-ul/TabContent_UL';
 
 const Search = (props) => {
     const [value, setValue] = React.useState(0);
@@ -107,11 +108,10 @@ const Search = (props) => {
 
                         <TabContent_IIN/>
                         <TabContent_FIO/>
-                        <TabConent_BIN/>
-
-                        <div className="tab__content">
-                        </div>
+                        <TabContent_BIN/>
+                        <TabContent_UL/>
                         
+
                     </div>
                 </div>
             </div>

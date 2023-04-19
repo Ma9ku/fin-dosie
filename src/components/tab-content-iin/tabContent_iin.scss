@@ -1,19 +1,21 @@
-.displayFlexTwoColumns {
-    display: flex;
-    flex-direction: row;
-    height: 300px;
-
-    > div:nth-child(1) {
-        width: 70%;
-    }
-
-    > div:nth-child(2) {
-        width: 30%;
+.tab_iin {
+    .displayFlexTwoColumns {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        height: 300px;
 
-        img {
-            height: 100%;
+        > div:nth-child(1) {
+            width: 70%;
+        }
+
+        > div:nth-child(2) {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                height: 100%;
+            }
         }
     }
 }
